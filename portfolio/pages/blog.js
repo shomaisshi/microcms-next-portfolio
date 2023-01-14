@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { client } from "../libs/client";
+import Header from '../component/Header'
 
-export default function Home({ blog }) {
+export default function Blog({ blog }) {
   return (
     <div>
+      <Header />
       <ul>
         {blog.map((blog) => (
           <li key={blog.id}>
