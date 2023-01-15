@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { client } from "../libs/client";
-import Header from '../component/Header'
+import Header from '../components/Header'
 
 export default function Portfolio({ portfolio }) {
     return (
