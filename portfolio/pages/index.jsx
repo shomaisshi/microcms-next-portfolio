@@ -37,9 +37,9 @@ export default function Home() {
 
         <div className="mt-4">
           <div>リンク</div>
-          <ul>
+          {/* <ul>
             <li><a href="https://twitter.com/DonutsHunter" target="_blank">Twitter</a></li>
-          </ul>
+          </ul> */}
         </div>
       </main>
     </>
