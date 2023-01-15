@@ -17,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="text-xl">
+      <main className="">
         <Header />
         <p>ポートフォリオサイトです。</p>
 

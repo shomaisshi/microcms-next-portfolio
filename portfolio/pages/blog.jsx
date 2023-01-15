@@ -14,7 +14,7 @@ export default function Blog({ blog }) {
               <div className="mt-2">
                 <Link href={`/blog/${blog.id}`} className="text-3xl font-bold">{blog.title}</Link>
               </div>
-              <div className="mt-6 text-xl"
+              <div className="mt-6"
                 dangerouslySetInnerHTML={{
                   __html: `${blog.content}`,
                 }}
@@ -22,7 +22,7 @@ export default function Blog({ blog }) {
             </div>
           ))}
         </div>
-        <div className="text-xl">
+        <div className="">
           <div>最新記事</div>
           {blog.map((blog) => (
             <div key={blog.id} className="border-solid border-t-2 border-gray-200">
