@@ -1,16 +1,21 @@
 import { client } from "../../libs/client";
+import Header from '../../components/Header'
 
 export default function PortfolioId({ portfolio }) {
     return (
-        <main>
-            <h1>{portfolio.title}</h1>
-            <p>{portfolio.publishedAt}</p>
-            <div
-                dangerouslySetInnerHTML={{
-                    __html: `${portfolio.content}`,
-                }}
-            />
-        </main>
+        <div>
+            <Header />
+            <main>
+                {portfolio.eyecatch ? <img src={portfolio.eyecatch.url} alt="eyecatch" /> : null}
+                <h1 className="text-3xl">{portfolio.title}</h1>
+                <p>{portfolio.publishedAt}</p>
+                <div className="mt-4"
+                    dangerouslySetInnerHTML={{
+                        __html: `${portfolio.content}`,
+                    }}
+                />
+            </main>
+        </div>
     );
 }
 
