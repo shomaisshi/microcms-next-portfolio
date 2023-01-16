@@ -16,8 +16,8 @@ export default function BlogId({ blog }) {
             <Header page={'blog'} />
             <main className="text-xl md:w-8/12 p-2 md:p-8 leading-relaxed" >
                 <p>{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</p>
-                <h1 className="text-5xl">{blog.title}</h1>
-                <div className="mt-4"
+                <h1 className="text-4xl md:text-5xl">{blog.title}</h1>
+                <div className="mt-6 post"
                     dangerouslySetInnerHTML={{
                         __html: `${blog.content}`,
                     }}

@@ -91,3 +91,31 @@ a {
     /* color-scheme: dark; */
   }
 }
+
+/* post */
+.post h2 {
+  margin: 8px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.post ol {
+  margin: 8px 0;
+  padding-left: 32px;
+  list-style: decimal;
+}
+
+.post ul {
+  margin: 8px 0;
+  padding-left: 32px;
+  list-style: disc;
+}
+
+.post li {}
+
+@media screen and (min-width: 700px) {
+  .post h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}

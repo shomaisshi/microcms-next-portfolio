@@ -22,14 +22,14 @@ export default function BlogPageId({ blog, totalCount }) {
             <Header page={'blog'} />
             <div className='p-2 md:p-8'>
                 <div className="mt-2 md:flex gap-4 text-xl">
-                    <div className="leading-relaxed">
+                    <div>
                         {blog.map((blog) => (
-                            <div key={blog.id} className="mb-20 md:mb-36">
+                            <div key={blog.id} className="mb-20 md:mb-36 leading-relaxed">
                                 <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
                                 <div className="mt-2">
                                     <Link href={`/blog/${blog.id}`} className="text-4xl md:text-5xl">{blog.title}</Link>
                                 </div>
-                                <div className="mt-6"
+                                <div className="mt-6 post"
                                     dangerouslySetInnerHTML={{
                                         __html: `${blog.content}`,
                                     }}
@@ -55,7 +55,7 @@ export default function BlogPageId({ blog, totalCount }) {
             </div>
 
             <Footer />
-        </div>
+        </div >
     );
 }
 

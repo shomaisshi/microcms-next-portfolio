@@ -9,7 +9,7 @@ export default function PortfolioId({ portfolio }) {
             <main className="text-xl md:w-8/12 p-2 md:p-8">
                 {portfolio.eyecatch ? <img src={portfolio.eyecatch.url} alt="eyecatch" /> : null}
                 <h1 className="text-4xl mt-4">{portfolio.title}</h1>
-                <div className="mt-4"
+                <div className="mt-4 post"
                     dangerouslySetInnerHTML={{
                         __html: `${portfolio.content}`,
                     }}
