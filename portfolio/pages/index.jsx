@@ -22,17 +22,16 @@ export default function Home({ portfolio, blog }) {
       <main className="text-xl">
         <Header />
 
-        <div>
+        <div className='md:w-8/12'>
           {/* <p className="mt-8 text-3xl">自己紹介</p> */}
           <p>
             shomaです。<br />
             オンスクリーンデザイン/開発をメインに制作活動をしています。<br />
-            WEBのフロントエンド実装を軸にUI/UXの制作、Next.js、React.jsの実装を担当いたします。<br />
-            インディーズゲーム制作やアプリ制作もしています。
+            WEBのフロントエンド実装を軸にUI/UXの制作、Next.js、React.jsの実装、インディーズゲーム制作やアプリ制作をしています。
           </p>
 
           <p className='mt-8'>使用ツール</p>
-          <p>React.js/Next.js/JavaScript/HTML/CSS/figma/Unity/Blender/P5JS/Godot/PICO-8</p>
+          <p>React.js/Next.js/JavaScript/HTML/CSS<br />figma/Unity/Blender/P5JS/Godot/PICO-8</p>
 
 
           <ul className="mt-8">
