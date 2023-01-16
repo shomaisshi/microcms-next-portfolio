@@ -16,7 +16,7 @@ export default function BlogId({ blog }) {
                 />
 
                 <div>
-                    <Link href={"/blog"} className='underline'>→blog一覧に戻る</Link>
+                    <Link href={"/blog/page/1"} className='underline'>→blog一覧に戻る</Link>
                 </div>
             </main>
         </div>

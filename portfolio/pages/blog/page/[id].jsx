@@ -46,7 +46,7 @@ export default function BlogPageId({ blog, totalCount }) {
                         <div key={blog.id}>
                             <ul className="pl-6">
                                 <li className='list-disc'>
-                                    <Link href={`/blog/${blog.id}`} className="underline">{blog.title}</Link>
+                                    <Link href={`/blog/${blog.id}`} >{blog.title}</Link>
                                 </li>
                             </ul>
                         </div>

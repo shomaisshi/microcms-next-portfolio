@@ -27,9 +27,13 @@ export default function Home({ portfolio, blog }) {
           <p>
             shomaです。<br />
             オンスクリーンデザイン/開発をメインに制作活動をしています。<br />
-            WEBのフロントエンド実装を軸にUI/UXの制作からNext.js、React.jsの実装を一貫して担当いたします。<br />
-            インディーゲーム制作やアプリ制作などもしています。
+            WEBのフロントエンド実装を軸にUI/UXの制作、Next.js、React.jsの実装を担当いたします。<br />
+            インディーズゲーム制作やアプリ制作もしています。
           </p>
+
+          <p className='mt-8'>使用ツール</p>
+          <p>React.js/Next.js/JavaScript/HTML/CSS/figma/Unity/Blender/P5JS/Godot/PICO-8</p>
+
 
           <ul className="mt-8">
             <li>2021~2023現在：株式会社ハンドサム</li>
@@ -39,10 +43,10 @@ export default function Home({ portfolio, blog }) {
 
           <div className='mt-8'>
             <h2 className='text-3xl'>works</h2>
-            <ul>
+            <ul className='pl-8'>
               {portfolio.map((portfolio) => (
-                <li key={portfolio.id} >
-                  <Link href={`/portfolio/${portfolio.id}`} className=''>{portfolio.title}</Link>
+                <li key={portfolio.id} className='list-disc' >
+                  <Link href={`/portfolio/${portfolio.id}`} >{portfolio.title}</Link>
                 </li>
               ))}
             </ul>
@@ -53,9 +57,9 @@ export default function Home({ portfolio, blog }) {
 
           <div className='mt-8'>
             <h2 className='text-3xl'>blog</h2>
-            <ul>
+            <ul className='pl-8'>
               {blog.map((blog) => (
-                <li key={blog.id}>
+                <li key={blog.id} className='list-disc' >
                   <Link href={`/blog/${blog.id}`} className=''>{blog.title}</Link>
                 </li>
               ))}
@@ -63,6 +67,11 @@ export default function Home({ portfolio, blog }) {
             <div>
               <Link href={"/blog/page/1"} className='underline'>→blog一覧を見る</Link>
             </div>
+          </div>
+
+          <div className='mt-8'>
+            <h2 className='text-3xl'>contact</h2>
+            <div>shoma.s.1219@gmail.com</div>
           </div>
         </div>
 
