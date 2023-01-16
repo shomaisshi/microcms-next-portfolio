@@ -1,5 +1,6 @@
 import { client } from "../../libs/client";
 import Header from '../../components/Header'
+import Link from "next/link";
 
 export default function PortfolioId({ portfolio }) {
     return (
@@ -13,6 +14,10 @@ export default function PortfolioId({ portfolio }) {
                         __html: `${portfolio.content}`,
                     }}
                 />
+
+                <div className="mt-8">
+                    <Link href={"/portfolio/page/1"} className='underline'>→works一覧に戻る</Link>
+                </div>
             </main>
         </div>
     );

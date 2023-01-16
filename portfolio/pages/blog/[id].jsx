@@ -2,12 +2,20 @@ import { client } from "../../libs/client";
 import Header from '../../components/Header'
 import Link from "next/link";
 
+// dayjs
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 export default function BlogId({ blog }) {
     return (
         <div>
             <Header />
             <main className="text-xl">
-                <p>{blog.publishedAt}</p>
+                <p>{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</p>
                 <h1 className="text-3xl">{blog.title}</h1>
                 <div className="mt-4"
                     dangerouslySetInnerHTML={{
@@ -15,7 +23,7 @@ export default function BlogId({ blog }) {
                     }}
                 />
 
-                <div>
+                <div className="mt-8">
                     <Link href={"/blog/page/1"} className='underline'>→blog一覧に戻る</Link>
                 </div>
             </main>
