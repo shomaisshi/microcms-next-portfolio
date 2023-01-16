@@ -3,11 +3,13 @@ import Image from 'next/image'
 import Link from "next/link";
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+import { client } from "../libs/client";
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({ portfolio, blog }) {
   return (
     <>
       <Head>
@@ -19,29 +21,67 @@ export default function Home() {
 
       <main className="">
         <Header />
-        <p>ポートフォリオサイトです。</p>
 
         <div>
-          <ul>
-            <li><Link href={"blog"}>→blogを見る</Link></li>
-            <li><Link href={"portfolio"}>→worksを見る</Link></li>
-          </ul>
+          <div className='mt-4'>
+            <h2 className='text-xl'>Works</h2>
+            <ul>
+              {portfolio.map((portfolio) => (
+                <li key={portfolio.id}>
+                  <Link href={`/portfolio/${portfolio.id}`} className='underline'>{portfolio.title}</Link>
+                </li>
+              ))}
+            </ul>
+            <div>...</div>
+            <div>
+              <Link href={"/portfolio"} className='underline'>→works一覧を見る</Link>
+            </div>
+          </div>
+
+          <div className='mt-4'>
+            <h2 className='text-xl'>Blog</h2>
+            <ul>
+              {blog.map((blog) => (
+                <li key={blog.id}>
+                  <Link href={`/blog/${blog.id}`} className='underline'>{blog.title}</Link>
+                </li>
+              ))}
+            </ul>
+            <div>...</div>
+            <div>
+              <Link href={"/blog"} className='underline'>→blog一覧を見る</Link>
+            </div>
+          </div>
         </div>
-        <p className="mt-4">自己紹介</p>
+        <p className="mt-4 text-xl">自己紹介</p>
         <p>
-          shomaと申します。<br />
-          ソフトウェア開発をメインに制作活動をしています。<br />
-          WEBのフロントエンド実装を軸にUI/UXの制作をしています。<br />
-          また、インディーゲーム制作もしています。
+          shomaです。<br />
+          オンスクリーンデザイン/開発をメインに制作活動をしています。<br />
+          WEBのフロントエンド実装を軸にUI/UXの制作からNext.js、React.jsの実装を一貫して担当いたします。<br />
+          インディーゲーム制作やアプリ制作などもしています。
         </p>
 
-        <div className="mt-4">
-          <div>リンク</div>
-          {/* <ul>
-            <li><a href="https://twitter.com/DonutsHunter" target="_blank">Twitter</a></li>
-          </ul> */}
-        </div>
+        <ul className="mt-4">
+          <li>2021~2023現在：株式会社ハンドサム</li>
+          <li>2020~2021：株式会社ドットインストール</li>
+          <li>2020：多摩美術大学統合デザイン学科卒業</li>
+        </ul>
+
+        <Footer />
       </main>
     </>
   )
 }
+
+
+// データをテンプレートに受け渡す部分の処理を記述します
+export const getStaticProps = async () => {
+  const portfolioData = await client.get({ endpoint: "portfolio" });
+  const blogData = await client.get({ endpoint: "blog" });
+  return {
+    props: {
+      portfolio: portfolioData.contents,
+      blog: blogData.contents,
+    },
+  };
+};

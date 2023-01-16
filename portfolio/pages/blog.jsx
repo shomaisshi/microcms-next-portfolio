@@ -2,17 +2,26 @@ import Link from "next/link";
 import { client } from "../libs/client";
 import Header from '../components/Header'
 
+// dayjs
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 export default function Blog({ blog }) {
   return (
     <div>
       <Header />
-      <div className="md:flex gap-4">
+      <h1 className="text-3xl">blog</h1>
+      <div className="mt-2 md:flex gap-4">
         <div className="leading-relaxed">
           {blog.map((blog) => (
-            <div key={blog.id} className="mb-20">
-              <div className="">{blog.publishedAt}</div>
+            <div key={blog.id} className="md:mb-10">
+              <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
               <div className="mt-2">
-                <Link href={`/blog/${blog.id}`} className="text-3xl font-bold">{blog.title}</Link>
+                <Link href={`/blog/${blog.id}`} className="text-3xl">{blog.title}</Link>
               </div>
               <div className="mt-6"
                 dangerouslySetInnerHTML={{
@@ -22,14 +31,15 @@ export default function Blog({ blog }) {
             </div>
           ))}
         </div>
-        <div className="">
+        <div>
           <div>最新記事</div>
           {blog.map((blog) => (
-            <div key={blog.id} className="border-solid border-t-2 border-gray-200">
-              {/* <div className="">{blog.publishedAt}</div> */}
-              <div className="">
-                <Link href={`/blog/${blog.id}`} className="text-blue-400">{blog.title}</Link>
-              </div>
+            <div key={blog.id}>
+              <ul className="pl-6">
+                <li className='list-disc'>
+                  <Link href={`/blog/${blog.id}`} className="underline">{blog.title}</Link>
+                </li>
+              </ul>
             </div>
           ))}
         </div>

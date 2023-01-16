@@ -1,18 +1,23 @@
 import { client } from "../../libs/client";
 import Header from '../../components/Header'
+import Link from "next/link";
 
 export default function BlogId({ blog }) {
     return (
         <div>
             <Header />
             <main>
-                <h1>{blog.title}</h1>
                 <p>{blog.publishedAt}</p>
-                <div
+                <h1 className="text-3xl">{blog.title}</h1>
+                <div className="mt-4"
                     dangerouslySetInnerHTML={{
                         __html: `${blog.content}`,
                     }}
                 />
+
+                <div>
+                    <Link href={"/blog"} className='underline'>→blog一覧に戻る</Link>
+                </div>
             </main>
         </div>
     );

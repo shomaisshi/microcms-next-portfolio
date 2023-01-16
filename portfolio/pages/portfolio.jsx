@@ -6,6 +6,7 @@ export default function Portfolio({ portfolio }) {
     return (
         <div>
             <Header />
+            <h1 className="text-3xl">works</h1>
             <ul>
                 {portfolio.map((portfolio) => (
                     <li key={portfolio.id}>
