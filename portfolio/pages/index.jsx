@@ -23,49 +23,48 @@ export default function Home({ portfolio, blog }) {
         <Header />
 
         <div>
-          <div className='mt-4'>
-            <h2 className='text-2xl'>Works</h2>
+          {/* <p className="mt-8 text-3xl">自己紹介</p> */}
+          <p>
+            shomaです。<br />
+            オンスクリーンデザイン/開発をメインに制作活動をしています。<br />
+            WEBのフロントエンド実装を軸にUI/UXの制作からNext.js、React.jsの実装を一貫して担当いたします。<br />
+            インディーゲーム制作やアプリ制作などもしています。
+          </p>
+
+          <ul className="mt-8">
+            <li>2021~2023現在：株式会社ハンドサム</li>
+            <li>2020~2021：株式会社ドットインストール</li>
+            <li>2020：多摩美術大学統合デザイン学科卒業</li>
+          </ul>
+
+          <div className='mt-8'>
+            <h2 className='text-3xl'>works</h2>
             <ul>
               {portfolio.map((portfolio) => (
                 <li key={portfolio.id} >
-                  <Link href={`/portfolio/${portfolio.id}`} className='underline'>{portfolio.title}</Link>
+                  <Link href={`/portfolio/${portfolio.id}`} className=''>{portfolio.title}</Link>
                 </li>
               ))}
             </ul>
-            <div>...</div>
             <div>
-              <Link href={"/portfolio"} className='underline'>→works一覧を見る</Link>
+              <Link href={"/portfolio/page/1"} className='underline'>→works一覧を見る</Link>
             </div>
           </div>
 
-          <div className='mt-4'>
-            <h2 className='text-2xl'>Blog</h2>
+          <div className='mt-8'>
+            <h2 className='text-3xl'>blog</h2>
             <ul>
               {blog.map((blog) => (
                 <li key={blog.id}>
-                  <Link href={`/blog/${blog.id}`} className='underline'>{blog.title}</Link>
+                  <Link href={`/blog/${blog.id}`} className=''>{blog.title}</Link>
                 </li>
               ))}
             </ul>
-            <div>...</div>
             <div>
-              <Link href={"/blog"} className='underline'>→blog一覧を見る</Link>
+              <Link href={"/blog/page/1"} className='underline'>→blog一覧を見る</Link>
             </div>
           </div>
         </div>
-        <p className="mt-4 text-xl">自己紹介</p>
-        <p>
-          shomaです。<br />
-          オンスクリーンデザイン/開発をメインに制作活動をしています。<br />
-          WEBのフロントエンド実装を軸にUI/UXの制作からNext.js、React.jsの実装を一貫して担当いたします。<br />
-          インディーゲーム制作やアプリ制作などもしています。
-        </p>
-
-        <ul className="mt-4">
-          <li>2021~2023現在：株式会社ハンドサム</li>
-          <li>2020~2021：株式会社ドットインストール</li>
-          <li>2020：多摩美術大学統合デザイン学科卒業</li>
-        </ul>
 
         <Footer />
       </main>
@@ -76,8 +75,8 @@ export default function Home({ portfolio, blog }) {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const portfolioData = await client.get({ endpoint: "portfolio" });
-  const blogData = await client.get({ endpoint: "blog" });
+  const portfolioData = await client.get({ endpoint: "portfolio", queries: { offset: 0, limit: 5 } });
+  const blogData = await client.get({ endpoint: "blog", queries: { offset: 0, limit: 5 } });
   return {
     props: {
       portfolio: portfolioData.contents,
