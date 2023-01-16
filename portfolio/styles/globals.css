@@ -111,12 +111,18 @@ a {
   list-style: disc;
 }
 
-.post .player {
-  width: 200px;
+.post a {
+  text-decoration: underline;
 }
 
-.player {
-  width: 200px;
+.post a::after {
+  content: '';
+  display: inline-block;
+  background: url(../public/images/arrow-up-right-from-square-solid.svg);
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  vertical-align: -1px;
 }
 
 @media screen and (min-width: 700px) {
