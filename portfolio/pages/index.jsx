@@ -22,7 +22,7 @@ export default function Home({ portfolio, blog }) {
       <main className="text-xl">
         <Header page={'about'} />
 
-        <div className='md:w-8/12 p-2 md:p-8'>
+        <div className='md:w-8/12 p-2 md:p-8 leading-relaxed'>
           {/* <p className="mt-8 text-3xl">自己紹介</p> */}
           <p>
             shomaです。<br />
