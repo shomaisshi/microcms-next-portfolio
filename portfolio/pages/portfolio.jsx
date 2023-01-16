@@ -7,11 +7,11 @@ export default function Portfolio({ portfolio }) {
         <div>
             <Header />
             <h1 className="text-3xl">works</h1>
-            <ul className="text-xl grid gap-4 md:grid-cols-2">
+            <ul className="text-xl">
                 {portfolio.map((portfolio) => (
                     <li key={portfolio.id}>
-                        <Link href={`/portfolio/${portfolio.id}`}>
-                            <img src={portfolio.eyecatch.url} alt="アイキャッチ画像" className="" />
+                        <Link href={`/portfolio/${portfolio.id}`} className='underline'>
+                            {/* <img src={portfolio.eyecatch.url} alt="アイキャッチ画像" className="" /> */}
                             {portfolio.title}
                         </Link>
                     </li>
