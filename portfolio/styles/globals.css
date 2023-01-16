@@ -111,7 +111,13 @@ a {
   list-style: disc;
 }
 
-.post li {}
+.post .player {
+  width: 200px;
+}
+
+.player {
+  width: 200px;
+}
 
 @media screen and (min-width: 700px) {
   .post h2 {

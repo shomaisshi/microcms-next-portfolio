@@ -19,53 +19,45 @@ export default function Home({ portfolio, blog }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="text-xl">
+      <main className="md:text-xl">
         <Header page={'about'} />
 
         <div className='md:w-8/12 p-2 md:p-8 leading-relaxed'>
-          {/* <p className="mt-8 text-3xl">自己紹介</p> */}
           <p>
             shomaです。<br />
             オンスクリーンデザイン/開発をメインに制作活動をしています。<br />
             WEBのフロントエンド実装を軸にUI/UXの制作、Next.js、React.jsの実装、インディーズゲーム制作やアプリ制作をしています。
           </p>
 
-          <p className='mt-8'>使用ツール</p>
-          <p>React.js/Next.js/JavaScript/HTML/CSS<br />figma/Unity/Blender/P5JS/Godot/PICO-8</p>
-
-
-          <ul className="mt-8">
-            <li>2021~2023現在：株式会社ハンドサム</li>
-            <li>2020~2021：株式会社ドットインストール</li>
-            <li>2020：多摩美術大学統合デザイン学科卒業</li>
-          </ul>
-
-          <div className='mt-8'>
-            <h2 className='text-3xl'>works</h2>
-            <ul className='pl-8'>
+          <div className='mt-16'>
+            <h2 className='text-3xl'><Link href={"/portfolio/page/1"} >＞works</Link></h2>
+            <ul className='pl-8 mt-2'>
               {portfolio.map((portfolio) => (
                 <li key={portfolio.id} className='list-disc' >
                   <Link href={`/portfolio/${portfolio.id}`} >{portfolio.title}</Link>
                 </li>
               ))}
             </ul>
-            <div>
-              <Link href={"/portfolio/page/1"} >→works一覧を見る</Link>
-            </div>
           </div>
 
           <div className='mt-8'>
-            <h2 className='text-3xl'>blog</h2>
-            <ul className='pl-8'>
+            <h2 className='text-3xl'><Link href={"/blog/page/1"} >＞blog</Link></h2>
+            <ul className='pl-8 mt-2'>
               {blog.map((blog) => (
                 <li key={blog.id} className='list-disc' >
                   <Link href={`/blog/${blog.id}`} className=''>{blog.title}</Link>
                 </li>
               ))}
             </ul>
-            <div>
-              <Link href={"/blog/page/1"} >→blog一覧を見る</Link>
-            </div>
+          </div>
+
+          <div className="mt-16">
+            <h2 className='text-3xl'>Shoma Kato</h2>
+            <div>Developer/Designer</div>
+
+            <div className='mt-2'>2021~2023現在：株式会社ハンドサム</div>
+            <div>2020~2021：株式会社ドットインストール</div>
+            <div>2020：多摩美術大学統合デザイン学科卒業</div>
           </div>
 
           <div className='mt-8'>

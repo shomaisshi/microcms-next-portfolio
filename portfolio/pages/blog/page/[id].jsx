@@ -21,7 +21,7 @@ export default function BlogPageId({ blog, totalCount }) {
         <div>
             <Header page={'blog'} />
             <div className='p-2 md:p-8'>
-                <div className="mt-2 md:flex gap-4 text-xl">
+                <div className="mt-2 md:flex gap-4 md:text-xl">
                     <div>
                         {blog.map((blog) => (
                             <div key={blog.id} className="mb-20 md:mb-36 leading-relaxed">

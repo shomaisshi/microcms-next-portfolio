@@ -13,7 +13,7 @@ export default function BlogPageId({ blog, totalCount }) {
         <div>
             <Header page={'works'} />
             <div className='p-2 md:p-8'>
-                <ul className='text-xl'>
+                <ul className='md:text-xl'>
                     {blog.map(blog => (
                         <li key={blog.id}>
                             <Link href={`/portfolio/${blog.id}`}>{blog.title}</Link>
