@@ -25,7 +25,7 @@ export default function PortfolioId({ portfolio }) {
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-    const data = await client.get({ endpoint: "portfolio" });
+    const data = await client.get({ endpoint: "portfolio", queries: { offset: 0, limit: 20 } });
 
     const paths = data.contents.map((content) => `/portfolio/${content.id}`);
     return { paths, fallback: false };
