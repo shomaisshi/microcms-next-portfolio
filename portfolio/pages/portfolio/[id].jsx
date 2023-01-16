@@ -5,8 +5,8 @@ export default function PortfolioId({ portfolio }) {
     return (
         <div>
             <Header />
-            <main className="text-xl">
-                {portfolio.eyecatch ? <img src={portfolio.eyecatch.url} alt="eyecatch" className="w-96" /> : null}
+            <main className="text-xl md:w-8/12">
+                {portfolio.eyecatch ? <img src={portfolio.eyecatch.url} alt="eyecatch" /> : null}
                 <h1 className="text-3xl">{portfolio.title}</h1>
                 <div className="mt-4"
                     dangerouslySetInnerHTML={{
