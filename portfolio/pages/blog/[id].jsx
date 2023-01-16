@@ -14,17 +14,19 @@ export default function BlogId({ blog }) {
     return (
         <div>
             <Header page={'blog'} />
-            <main className="md:text-xl md:w-8/12 p-2 md:p-8 leading-relaxed" >
-                <p>{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</p>
-                <h1 className="text-4xl md:text-5xl">{blog.title}</h1>
-                <div className="mt-6 post"
-                    dangerouslySetInnerHTML={{
-                        __html: `${blog.content}`,
-                    }}
-                />
+            <main className="md:text-xl md:w-8/12 p-2 md:p-8" >
+                <div className="leading-relaxed">
+                    <div>{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
+                    <h1 className="mt-2 text-4xl md:text-5xl">{blog.title}</h1>
+                    <div className="mt-6 post"
+                        dangerouslySetInnerHTML={{
+                            __html: `${blog.content}`,
+                        }}
+                    />
 
-                <div className="mt-8">
-                    <Link href={"/blog/page/1"} className='underline'>→blog一覧に戻る</Link>
+                    <div className="mt-8">
+                        <Link href={"/blog/page/1"} className='underline'>→blog一覧に戻る</Link>
+                    </div>
                 </div>
             </main>
         </div>
