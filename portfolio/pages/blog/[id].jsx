@@ -14,7 +14,7 @@ export default function BlogId({ blog }) {
     return (
         <div>
             <Header />
-            <main className="text-xl">
+            <main className="text-xl md:w-8/12">
                 <p>{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</p>
                 <h1 className="text-3xl">{blog.title}</h1>
                 <div className="mt-4"
