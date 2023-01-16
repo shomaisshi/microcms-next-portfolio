@@ -19,38 +19,38 @@ const PER_PAGE = 5;
 export default function BlogPageId({ blog, totalCount }) {
     return (
         <div>
-            <Header />
-            <h1 className="text-xl">＞blog</h1>
-            <div className="mt-2 md:flex gap-4 text-xl">
-                <div className="leading-relaxed">
-                    {blog.map((blog) => (
-                        <div key={blog.id} className="md:mb-10">
-                            <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
-                            <div className="mt-2">
-                                <Link href={`/blog/${blog.id}`} className="text-3xl">{blog.title}</Link>
+            <Header page={'blog'} />
+            <div className='p-2 md:p-8'>
+                <div className="mt-2 md:flex gap-4 text-xl">
+                    <div className="leading-relaxed">
+                        {blog.map((blog) => (
+                            <div key={blog.id} className="mb-20 md:mb-36">
+                                <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
+                                <div className="mt-2">
+                                    <Link href={`/blog/${blog.id}`} className="text-4xl md:text-5xl">{blog.title}</Link>
+                                </div>
+                                <div className="mt-6"
+                                    dangerouslySetInnerHTML={{
+                                        __html: `${blog.content}`,
+                                    }}
+                                />
                             </div>
-                            <div className="mt-6"
-                                dangerouslySetInnerHTML={{
-                                    __html: `${blog.content}`,
-                                }}
-                            />
-                        </div>
-                    ))}
-                    <Pagination totalCount={totalCount} folder={'blog'} />
-                </div>
+                        ))}
+                        <Pagination totalCount={totalCount} folder={'blog'} />
+                    </div>
 
-
-                <div>
-                    <div>記事</div>
-                    {blog.map((blog) => (
-                        <div key={blog.id}>
-                            <ul className="pl-6">
-                                <li className='list-disc'>
-                                    <Link href={`/blog/${blog.id}`} >{blog.title}</Link>
-                                </li>
-                            </ul>
-                        </div>
-                    ))}
+                    <div>
+                        <div>記事</div>
+                        {blog.map((blog) => (
+                            <div key={blog.id}>
+                                <ul className="pl-6">
+                                    <li className='list-disc'>
+                                        <Link href={`/blog/${blog.id}`} >{blog.title}</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 

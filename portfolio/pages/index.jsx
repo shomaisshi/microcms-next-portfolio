@@ -20,9 +20,9 @@ export default function Home({ portfolio, blog }) {
       </Head>
 
       <main className="text-xl">
-        <Header />
+        <Header page={'about'} />
 
-        <div className='md:w-8/12'>
+        <div className='md:w-8/12 p-2 md:p-8'>
           {/* <p className="mt-8 text-3xl">自己紹介</p> */}
           <p>
             shomaです。<br />
@@ -50,7 +50,7 @@ export default function Home({ portfolio, blog }) {
               ))}
             </ul>
             <div>
-              <Link href={"/portfolio/page/1"} className='underline'>→works一覧を見る</Link>
+              <Link href={"/portfolio/page/1"} >→works一覧を見る</Link>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ export default function Home({ portfolio, blog }) {
               ))}
             </ul>
             <div>
-              <Link href={"/blog/page/1"} className='underline'>→blog一覧を見る</Link>
+              <Link href={"/blog/page/1"} >→blog一覧を見る</Link>
             </div>
           </div>
 

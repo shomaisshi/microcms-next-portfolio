@@ -8,7 +8,7 @@ export const Pagination = ({ totalCount, folder }) => {
         [...Array(end - start + 1)].map((_, i) => start + i)
 
     return (
-        <ul className='flex gap-4'>
+        <ul className='flex gap-4 mt-4'>
             {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
                 <li key={index}>
                     {folder == 'portfolio' ? (

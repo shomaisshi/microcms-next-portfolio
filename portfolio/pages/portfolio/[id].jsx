@@ -5,10 +5,10 @@ import Link from "next/link";
 export default function PortfolioId({ portfolio }) {
     return (
         <div>
-            <Header />
-            <main className="text-xl md:w-8/12">
+            <Header page={'works'} />
+            <main className="text-xl md:w-8/12 p-2 md:p-8">
                 {portfolio.eyecatch ? <img src={portfolio.eyecatch.url} alt="eyecatch" /> : null}
-                <h1 className="text-3xl">{portfolio.title}</h1>
+                <h1 className="text-4xl mt-4">{portfolio.title}</h1>
                 <div className="mt-4"
                     dangerouslySetInnerHTML={{
                         __html: `${portfolio.content}`,

@@ -11,15 +11,17 @@ const PER_PAGE = 5;
 export default function BlogPageId({ blog, totalCount }) {
     return (
         <div>
-            <Header />
-            <ul className='text-xl'>
-                {blog.map(blog => (
-                    <li key={blog.id}>
-                        <Link href={`/portfolio/${blog.id}`}>{blog.title}</Link>
-                    </li>
-                ))}
-            </ul>
-            <Pagination totalCount={totalCount} folder={'portfolio'} />
+            <Header page={'works'} />
+            <div className='p-2 md:p-8'>
+                <ul className='text-xl'>
+                    {blog.map(blog => (
+                        <li key={blog.id}>
+                            <Link href={`/portfolio/${blog.id}`}>{blog.title}</Link>
+                        </li>
+                    ))}
+                </ul>
+                <Pagination totalCount={totalCount} folder={'portfolio'} />
+            </div>
             <Footer />
         </div>
     );
