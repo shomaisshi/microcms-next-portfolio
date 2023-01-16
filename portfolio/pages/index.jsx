@@ -29,7 +29,7 @@ export default function Home({ portfolio, blog }) {
             WEBのフロントエンド実装を軸にUI/UXの制作、Next.js、React.jsの実装、インディーズゲーム制作やアプリ制作をしています。
           </p>
 
-          <div className='mt-16'>
+          {/* <div className='mt-16'>
             <h2 className='text-3xl'><Link href={"/portfolio/page/1"} >＞works</Link></h2>
             <ul className='pl-8 mt-2'>
               {portfolio.map((portfolio) => (
@@ -49,13 +49,13 @@ export default function Home({ portfolio, blog }) {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           <div className="mt-16">
             <h2 className='text-3xl'>Shoma Kato</h2>
             <div>Developer/Designer</div>
 
-            <div className='mt-2'>2021~2023現在：株式会社ハンドサム</div>
+            <div className='mt-4'>2021~2023現在：株式会社ハンドサム</div>
             <div>2020~2021：株式会社ドットインストール</div>
             <div>2020：多摩美術大学統合デザイン学科卒業</div>
           </div>
