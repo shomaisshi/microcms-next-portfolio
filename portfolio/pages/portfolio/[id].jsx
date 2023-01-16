@@ -5,7 +5,7 @@ export default function PortfolioId({ portfolio }) {
     return (
         <div>
             <Header />
-            <main>
+            <main className="text-xl">
                 {portfolio.eyecatch ? <img src={portfolio.eyecatch.url} alt="eyecatch" /> : null}
                 <h1 className="text-3xl">{portfolio.title}</h1>
                 <p>{portfolio.publishedAt}</p>

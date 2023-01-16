@@ -6,7 +6,7 @@ export default function BlogId({ blog }) {
     return (
         <div>
             <Header />
-            <main>
+            <main className="text-xl">
                 <p>{blog.publishedAt}</p>
                 <h1 className="text-3xl">{blog.title}</h1>
                 <div className="mt-4"

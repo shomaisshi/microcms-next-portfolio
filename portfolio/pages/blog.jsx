@@ -15,7 +15,7 @@ export default function Blog({ blog }) {
     <div>
       <Header />
       <h1 className="text-3xl">blog</h1>
-      <div className="mt-2 md:flex gap-4">
+      <div className="mt-2 md:flex gap-4 text-xl">
         <div className="leading-relaxed">
           {blog.map((blog) => (
             <div key={blog.id} className="md:mb-10">

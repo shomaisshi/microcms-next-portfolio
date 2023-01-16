@@ -19,15 +19,15 @@ export default function Home({ portfolio, blog }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="">
+      <main className="text-xl">
         <Header />
 
         <div>
           <div className='mt-4'>
-            <h2 className='text-xl'>Works</h2>
+            <h2 className='text-2xl'>Works</h2>
             <ul>
               {portfolio.map((portfolio) => (
-                <li key={portfolio.id}>
+                <li key={portfolio.id} >
                   <Link href={`/portfolio/${portfolio.id}`} className='underline'>{portfolio.title}</Link>
                 </li>
               ))}
@@ -39,7 +39,7 @@ export default function Home({ portfolio, blog }) {
           </div>
 
           <div className='mt-4'>
-            <h2 className='text-xl'>Blog</h2>
+            <h2 className='text-2xl'>Blog</h2>
             <ul>
               {blog.map((blog) => (
                 <li key={blog.id}>
