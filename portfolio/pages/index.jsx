@@ -65,9 +65,9 @@ export default function Home({ portfolio, blog }) {
             <div>shoma.s.1219@gmail.com</div>
             <div>
               <div className='flex gap-3'>
-                <a href="https://twitter.com/home" target="_blank">Twitter</a>
-                <a href="https://github.com/shomaisshi" target="_blank">Github</a>
-                <a href="https://zenn.dev/shomaisshi?tab=scraps" target="_blank">Zenn</a>
+                <a href="https://twitter.com/home" target="_blank" rel="noreferrer">Twitter</a>
+                <a href="https://github.com/shomaisshi" target="_blank" rel="noreferrer">Github</a>
+                <a href="https://zenn.dev/shomaisshi?tab=scraps" target="_blank" rel="noreferrer">Zenn</a>
               </div>
             </div>
           </div>
