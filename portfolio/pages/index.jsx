@@ -63,6 +63,13 @@ export default function Home({ portfolio, blog }) {
           <div className='mt-8'>
             <h2 className='text-3xl'>contact</h2>
             <div>shoma.s.1219@gmail.com</div>
+            <div>
+              <div className='flex gap-3'>
+                <a href="https://twitter.com/home" target="_blank">Twitter</a>
+                <a href="https://github.com/shomaisshi" target="_blank">Github</a>
+                <a href="https://zenn.dev/shomaisshi?tab=scraps" target="_blank">Zenn</a>
+              </div>
+            </div>
           </div>
         </div>
 
