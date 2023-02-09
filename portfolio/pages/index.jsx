@@ -52,7 +52,7 @@ export default function Home({ portfolio, blog }) {
           </div> */}
 
           <div className="mt-16">
-            <h2 className='text-3xl'>Shoma Kato</h2>
+            <h2>Shoma Kato</h2>
             <div>Developer/Designer</div>
 
             <div className='mt-4'>2021~2023現在：株式会社ハンドサム</div>
@@ -61,11 +61,15 @@ export default function Home({ portfolio, blog }) {
           </div>
 
           <div className='mt-8'>
-            <h2 className='text-3xl'>contact</h2>
+            <h2>Contact</h2>
             <div>shoma.s.1219@gmail.com</div>
             <div>
               <div className='flex gap-3'>
                 <a href="https://twitter.com/home" target="_blank" rel="noreferrer">Twitter</a>
+                <a href="https://note.com/shoma_dev" target="_blank" rel="noreferrer">note</a>
+                <a href="https://donutshunter.itch.io" target="_blank" rel="noreferrer">itch</a>
+              </div>
+              <div className='flex gap-3'>
                 <a href="https://github.com/shomaisshi" target="_blank" rel="noreferrer">Github</a>
                 <a href="https://zenn.dev/shomaisshi?tab=scraps" target="_blank" rel="noreferrer">Zenn</a>
               </div>
