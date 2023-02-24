@@ -19,14 +19,13 @@ export default function Home({ portfolio, blog }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="md:text-xl">
+      <main className="">
         <Header page={'about'} />
 
         <div className='md:w-8/12 p-2 md:p-8 leading-relaxed'>
           <p>
             shomaです。<br />
-            オンスクリーンデザイン/開発をメインに制作活動をしています。<br />
-            WEBのフロントエンド実装を軸にUI/UXの制作、Next.js、React.jsの実装、インディーズゲーム制作やアプリ制作をしています。
+            ソフトウェア・Web・インデーズゲームのデザイン/開発をメインに制作活動をしています。
           </p>
 
           {/* <div className='mt-16'>

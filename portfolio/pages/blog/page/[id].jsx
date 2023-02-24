@@ -21,13 +21,13 @@ export default function BlogPageId({ blog, totalCount }) {
         <div>
             <Header page={'blog'} />
             <div className='p-2 md:p-8'>
-                <div className="mt-2 md:flex gap-4 md:text-xl">
+                <div className="mt-2 md:flex gap-4">
                     <div>
                         {blog.map((blog) => (
                             <div key={blog.id} className="mb-20 md:mb-36 leading-relaxed">
                                 <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
                                 <div className="mt-2">
-                                    <Link href={`/blog/${blog.id}`} className="text-4xl md:text-5xl">{blog.title}</Link>
+                                    <Link href={`/blog/${blog.id}`} className="text-4xl md:text-3xl">{blog.title}</Link>
                                 </div>
                                 <div className="mt-6 post"
                                     dangerouslySetInnerHTML={{
@@ -75,6 +75,12 @@ export const getStaticProps = async (context) => {
     const id = context.params.id;
 
     const data = await client.get({ endpoint: "blog", queries: { offset: (id - 1) * 5, limit: 5 } });
+    data.contents.map(function (item) {
+        item.content = item.content.replace(
+            /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|gif|png))"/g,
+            '"$1?fit=max&w=1024&fm=webp"'
+        );
+    });
 
     return {
         props: {

@@ -45,6 +45,10 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
     const data = await client.get({ endpoint: "blog", contentId: id });
+    data.content = data.content.replace(
+        /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|gif|png))"/g,
+        '"$1?fit=max&w=1024&fm=webp"'
+    );
 
     return {
         props: {

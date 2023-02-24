@@ -7,7 +7,7 @@ export default function PortfolioId({ portfolio }) {
         <div>
             <Header page={'works'} />
             <main className="md:text-xl md:w-8/12 p-2 md:p-8">
-                {portfolio.eyecatch ? <img src={portfolio.eyecatch.url} alt="eyecatch" /> : null}
+                {portfolio.eyecatch ? <img src={portfolio.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" /> : null}
                 <h1 className="text-3xl md:text-4xl mt-8">{portfolio.title}</h1>
                 <div className="mt-8 post"
                     dangerouslySetInnerHTML={{
@@ -35,6 +35,10 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
     const data = await client.get({ endpoint: "portfolio", contentId: id });
+    data.content = data.content.replace(
+        /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|gif|png))"/g,
+        '"$1?fit=max&w=400&fm=webp"'
+    );
 
     return {
         props: {
