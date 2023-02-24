@@ -1,10 +1,16 @@
 import { client } from "../../libs/client";
+import MyHead from '../../components/MyHead'
 import Header from '../../components/Header'
 import Link from "next/link";
 
 export default function PortfolioId({ portfolio }) {
     return (
         <div>
+            <MyHead
+                pageTitle={portfolio.title}
+                pageDescription={'shomaのworksです。'}
+                pageImg={'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
+            />
             <Header page={'works'} />
             <main className="md:text-xl md:w-8/12 p-2 md:p-8">
                 {portfolio.eyecatch ? <img src={portfolio.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" /> : null}

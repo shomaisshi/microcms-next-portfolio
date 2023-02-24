@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Pagination } from '../../../components/Pagination';
 import { client } from "../../../libs/client";
+import MyHead from '../../../components/MyHead'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 
@@ -19,6 +20,11 @@ const PER_PAGE = 5;
 export default function BlogPageId({ blog, totalCount }) {
     return (
         <div>
+            <MyHead
+                pageTitle={'blog'}
+                pageDescription={'shomaのブログ一覧ページです。'}
+                pageImg={'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
+            />
             <Header page={'blog'} />
             <div className='p-2 md:p-8'>
                 <div className="mt-2 md:flex gap-4">

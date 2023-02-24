@@ -1,4 +1,5 @@
 import { client } from "../../libs/client";
+import MyHead from '../../components/MyHead'
 import Header from '../../components/Header'
 import Link from "next/link";
 
@@ -13,6 +14,11 @@ dayjs.extend(timezone);
 export default function BlogId({ blog }) {
     return (
         <div>
+            <MyHead
+                pageTitle={blog.title}
+                pageDescription={'shomaのブログです。'}
+                pageImg={'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
+            />
             <Header page={'blog'} />
             <main className="md:text-xl md:w-8/12 p-2 md:p-8" >
                 <div className="leading-relaxed">
