@@ -79,8 +79,9 @@ export default function Home({ portfolio, blog }) {
           </div>
         </div>
 
-        <Footer />
       </main>
+
+      <Footer />
     </>
   )
 }

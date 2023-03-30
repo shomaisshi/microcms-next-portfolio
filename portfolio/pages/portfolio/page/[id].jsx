@@ -6,7 +6,7 @@ import MyHead from '../../../components/MyHead'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 
-const PER_PAGE = 5;
+const PER_PAGE = 20;
 
 // pages/blog/[id].js
 export default function BlogPageId({ blog, totalCount }) {
@@ -17,22 +17,27 @@ export default function BlogPageId({ blog, totalCount }) {
                 pageDescription={'shomaのworks一覧ページです。'}
                 pageImg={'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
             />
-            <Header page={'works'} />
-            <div className='p-2 md:p-8'>
-                <div className='md:text-2xl font-bold'>works</div>
-                <ul className='mt-4 grid gap-2 md:text-xl'>
-                    {blog.map(blog => (
-                        <li key={blog.id}>
-                            <Link href={`/portfolio/${blog.id}`} className='hover:underline'>
-                                {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?w=324"} alt="eyecatch" /> : null} */}
-                                {blog.title}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-                <Pagination totalCount={totalCount} folder={'portfolio'} />
+            <div className=''>
+                <Header page={'works'} />
+
+                {/* main  */}
+                <div className='p-2 md:p-8'>
+                    <div className='md:text-2xl font-bold'>works</div>
+                    <ul className='mt-4 grid gap-2 md:text-xl'>
+                        {blog.map(blog => (
+                            <li key={blog.id}>
+                                <Link href={`/portfolio/${blog.id}`} className='hover:underline'>
+                                    {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?w=324"} alt="eyecatch" /> : null} */}
+                                    {blog.title}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <Pagination totalCount={totalCount} folder={'portfolio'} />
+                </div>
+
+                <Footer />
             </div>
-            <Footer />
         </div>
     );
 }
@@ -52,7 +57,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
 
-    const data = await client.get({ endpoint: "portfolio", queries: { offset: (id - 1) * 5, limit: 5 } });
+    const data = await client.get({ endpoint: "portfolio", queries: { offset: (id - 1) * PER_PAGE, limit: PER_PAGE } });
 
     return {
         props: {

@@ -14,7 +14,7 @@ import timezone from 'dayjs/plugin/timezone';
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-const PER_PAGE = 5;
+const PER_PAGE = 20;
 
 // pages/blog/[id].js
 export default function BlogPageId({ blog, totalCount }) {
@@ -26,6 +26,8 @@ export default function BlogPageId({ blog, totalCount }) {
                 pageImg={'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
             />
             <Header page={'blog'} />
+
+            {/* main  */}
             <div className='p-2 md:p-8'>
                 <div className="mt-2 md:flex gap-4">
                     {/* <div>
@@ -54,6 +56,8 @@ export default function BlogPageId({ blog, totalCount }) {
                                 </li>
                             ))}
                         </ul>
+
+                        <Pagination totalCount={totalCount} folder={'blog'} />
                     </div>
                 </div>
             </div>
@@ -78,7 +82,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
 
-    const data = await client.get({ endpoint: "blog", queries: { offset: (id - 1) * 5, limit: 5 } });
+    const data = await client.get({ endpoint: "blog", queries: { offset: (id - 1) * PER_PAGE, limit: PER_PAGE } });
     data.contents.map(function (item) {
         item.content = item.content.replace(
             /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|gif|png))"/g,
