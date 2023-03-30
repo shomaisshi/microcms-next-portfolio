@@ -21,7 +21,7 @@ export default function Home({ portfolio, blog }) {
       <main className="">
         <Header page={'about'} />
 
-        <div className='md:w-8/12 p-2 md:p-8 leading-relaxed'>
+        <div className='md:w-8/12 p-2 md:p-8 leading-relaxed md:text-xl'>
           {/* <Image src="/OGP.png" alt="" width={200} height={200} /> */}
           <p className='mt-0'>
             shomaです。<br />
