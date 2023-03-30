@@ -22,11 +22,14 @@ export default function Home({ portfolio, blog }) {
         <Header page={'about'} />
 
         <div className='md:w-8/12 p-2 md:p-8 leading-relaxed'>
-          <Image src="/OGP.png" alt="" width={200} height={200} />
-          <p className='mt-8'>
+          {/* <Image src="/OGP.png" alt="" width={200} height={200} /> */}
+          <p className='mt-0'>
             shomaです。<br />
-            ソフトウェア・Web・インデーズゲームのデザイン/開発をメインに制作活動をしています。
+            インディーゲーム作ったりしてます。<br />
           </p>
+          <p>→<a href='https://donutshunter.itch.io' className='hover:underline'>作った小さなゲーム作品（itchへとびます）</a></p>
+          <p>→<Link href='blog/page/1' className='hover:underline'>適当なブログ</Link></p>
+          <p>→<Link href='portfolio/page/1' className='hover:underline'>今まで作ったものいろいろ</Link></p>
 
           {/* <div className='mt-16'>
             <h2 className='text-3xl'><Link href={"/portfolio/page/1"} >＞works</Link></h2>
@@ -52,7 +55,7 @@ export default function Home({ portfolio, blog }) {
 
           <div className="mt-16">
             <h2>Shoma Kato</h2>
-            <div>Developer/Designer</div>
+            <div>ゲームジャマー</div>
 
             <div className='mt-4'>2021~2023現在：株式会社ハンドサム</div>
             <div>2020~2021：株式会社ドットインストール</div>

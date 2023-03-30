@@ -99,6 +99,12 @@ a {
   font-weight: bold;
 }
 
+.post h3 {
+  margin: 8px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .post ol {
   margin: 8px 0;
   padding-left: 32px;

@@ -14,7 +14,7 @@ export default function PortfolioId({ portfolio }) {
             <Header page={'works'} />
             <main className="md:text-xl md:w-8/12 p-2 md:p-8">
                 {portfolio.eyecatch ? <img src={portfolio.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" /> : null}
-                <h1 className="text-3xl md:text-4xl mt-8">{portfolio.title}</h1>
+                <h1 className="text-3xl md:text-4xl mt-8 font-bold">{portfolio.title}</h1>
                 <div className="mt-8 post"
                     dangerouslySetInnerHTML={{
                         __html: `${portfolio.content}`,

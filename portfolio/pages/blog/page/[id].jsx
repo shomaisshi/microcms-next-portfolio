@@ -28,12 +28,12 @@ export default function BlogPageId({ blog, totalCount }) {
             <Header page={'blog'} />
             <div className='p-2 md:p-8'>
                 <div className="mt-2 md:flex gap-4">
-                    <div>
+                    {/* <div>
                         {blog.map((blog) => (
                             <div key={blog.id} className="mb-20 md:mb-36 leading-relaxed">
                                 <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
                                 <div className="mt-2">
-                                    <Link href={`/blog/${blog.id}`} className="text-4xl md:text-3xl">{blog.title}</Link>
+                                    <Link href={`/blog/${blog.id}`} className="text-2xl md:text-3xl font-bold">{blog.title}</Link>
                                 </div>
                                 <div className="mt-6 post"
                                     dangerouslySetInnerHTML={{
@@ -43,19 +43,17 @@ export default function BlogPageId({ blog, totalCount }) {
                             </div>
                         ))}
                         <Pagination totalCount={totalCount} folder={'blog'} />
-                    </div>
+                    </div> */}
 
                     <div>
-                        <div>記事</div>
-                        {blog.map((blog) => (
-                            <div key={blog.id}>
-                                <ul className="pl-6">
-                                    <li className='list-disc'>
-                                        <Link href={`/blog/${blog.id}`} >{blog.title}</Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        ))}
+                        <div className='md:text-2xl font-bold'>blog</div>
+                        <ul className="mt-4 grid gap-2 md:text-xl">
+                            {blog.map((blog) => (
+                                <li key={blog.id} className='list-none md:text-xl'>
+                                    <Link href={`/blog/${blog.id}`} className='hover:underline' >{blog.title}</Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>

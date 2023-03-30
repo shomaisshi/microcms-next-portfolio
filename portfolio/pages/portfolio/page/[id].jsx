@@ -19,11 +19,12 @@ export default function BlogPageId({ blog, totalCount }) {
             />
             <Header page={'works'} />
             <div className='p-2 md:p-8'>
-                <ul className='grid gap-4 md:text-xl'>
+                <div className='md:text-2xl font-bold'>works</div>
+                <ul className='mt-4 grid gap-2 md:text-xl'>
                     {blog.map(blog => (
                         <li key={blog.id}>
-                            <Link href={`/portfolio/${blog.id}`}>
-                                {blog.eyecatch ? <img src={blog.eyecatch.url + "?w=324"} alt="eyecatch" /> : null}
+                            <Link href={`/portfolio/${blog.id}`} className='hover:underline'>
+                                {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?w=324"} alt="eyecatch" /> : null} */}
                                 {blog.title}
                             </Link>
                         </li>
