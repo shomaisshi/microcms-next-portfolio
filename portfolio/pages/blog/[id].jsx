@@ -22,7 +22,7 @@ export default function BlogId({ blog }) {
             <Header page={'blog'} />
             <main className="md:text-xl md:w-8/12 p-2 md:p-8" >
                 <div className="leading-relaxed">
-                    {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" /> : null}
+                    {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-video object-cover w-full" /> : null}
                     <div className="mt-2">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
                     <h1 className="mt-2 text-3xl md:text-4xl font-bold">{blog.title}</h1>
                     <div className="mt-6 post"
