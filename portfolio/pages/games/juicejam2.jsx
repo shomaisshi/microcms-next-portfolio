@@ -91,16 +91,19 @@ export default function Juicejam2() {
             document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 37 }));
         };
 
-        // canvas.addEventListener('mousedown', handleMouseDown);
+        canvas.addEventListener('mousedown', handleMouseDown);
         canvas.addEventListener('mousemove', handleMouseDown);
         canvas.addEventListener('mouseup', handleMouseUp);
         canvas.addEventListener('touchstart', handleTouchStart);
+        canvas.addEventListener('touchmove', handleTouchStart);
         canvas.addEventListener('touchend', handleTouchEnd);
 
         return () => {
             canvas.removeEventListener('mousedown', handleMouseDown);
+            canvas.removeEventListener('mousemove', handleMouseDown);
             canvas.removeEventListener('mouseup', handleMouseUp);
             canvas.removeEventListener('touchstart', handleTouchStart);
+            canvas.removeEventListener('touchmove', handleTouchStart);
             canvas.removeEventListener('touchend', handleTouchEnd);
         };
     }, []);
