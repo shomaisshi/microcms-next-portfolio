@@ -50,8 +50,6 @@ export default function Juicejam2() {
         };
 
         const handleMouseDown = (event) => {
-            canvas.addEventListener('mousedown', () => {
-            });
             const rect = canvas.getBoundingClientRect();
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
@@ -96,18 +94,18 @@ export default function Juicejam2() {
         };
 
         canvas.addEventListener('mousedown', handleMouseDown);
-        canvas.addEventListener('mousemove', handleMouseDown);
+        // canvas.addEventListener('mousemove', handleMouseDown);
         canvas.addEventListener('mouseup', handleMouseUp);
         canvas.addEventListener('touchstart', handleTouchStart);
-        canvas.addEventListener('touchmove', handleTouchStart);
+        // canvas.addEventListener('touchmove', handleTouchStart);
         canvas.addEventListener('touchend', handleTouchEnd);
 
         return () => {
             canvas.removeEventListener('mousedown', handleMouseDown);
-            canvas.removeEventListener('mousemove', handleMouseDown);
+            // canvas.removeEventListener('mousemove', handleMouseDown);
             canvas.removeEventListener('mouseup', handleMouseUp);
             canvas.removeEventListener('touchstart', handleTouchStart);
-            canvas.removeEventListener('touchmove', handleTouchStart);
+            // canvas.removeEventListener('touchmove', handleTouchStart);
             canvas.removeEventListener('touchend', handleTouchEnd);
         };
     }, []);
