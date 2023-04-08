@@ -80,6 +80,7 @@ export default function Gamepad() {
             updateButton(x, y, zButton.x, zButton.y, zButton.w, zButton.h, zButton.name, zButton.key)
             // x
             updateButton(x, y, xButton.x, xButton.y, xButton.w, xButton.h, xButton.name, xButton.key)
+            // ctx.fillText("touches.length", 90, 20)
         };
 
         function endButton(name, x, y, w, h, key) {
@@ -120,7 +121,7 @@ export default function Gamepad() {
                 // x
                 updateButton(x, y, xButton.x, xButton.y, xButton.w, xButton.h, xButton.name, xButton.key)
             }
-            fillText("touches.length" + event.touches.length, 0, 0)
+            ctx.fillText("touches.length" + event.touches.length, 90, 20)
 
         };
 
