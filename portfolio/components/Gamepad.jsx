@@ -118,9 +118,9 @@ export default function Gamepad() {
             updateButton(onex, oney, downButton.x, downButton.y, downButton.w, downButton.h, downButton.name, downButton.key)
 
             // z
-            updateButton(x, y, zButton.x, zButton.y, zButton.w, zButton.h, zButton.name, zButton.key)
+            updateButton(onex, oney, zButton.x, zButton.y, zButton.w, zButton.h, zButton.name, zButton.key)
             // x
-            updateButton(x, y, xButton.x, xButton.y, xButton.w, xButton.h, xButton.name, xButton.key)
+            updateButton(onex, oney, xButton.x, xButton.y, xButton.w, xButton.h, xButton.name, xButton.key)
 
             const twox = event.touches[1].clientX - rect.left;
             const twoy = event.touches[1].clientY - rect.top;
@@ -135,9 +135,9 @@ export default function Gamepad() {
             updateButton(twox, twoy, downButton.x, downButton.y, downButton.w, downButton.h, downButton.name, downButton.key)
 
             // z
-            updateButton(x, y, zButton.x, zButton.y, zButton.w, zButton.h, zButton.name, zButton.key)
+            updateButton(twox, twoy, zButton.x, zButton.y, zButton.w, zButton.h, zButton.name, zButton.key)
             // x
-            updateButton(x, y, xButton.x, xButton.y, xButton.w, xButton.h, xButton.name, xButton.key)
+            updateButton(twox, twoy, xButton.x, xButton.y, xButton.w, xButton.h, xButton.name, xButton.key)
             ctx.fillText("touches.length" + event.touches.length, 90, 20)
 
         };
