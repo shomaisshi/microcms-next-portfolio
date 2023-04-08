@@ -18,8 +18,8 @@ export default function Redream() {
         <>
             <Header />
             <Pico8 src="/pico8_games/lsdjam.js"
-                autoPlay={true}
-                legacyButtons={false}
+                autoPlay={false}
+                legacyButtons={true}
                 hideCursor={false}
                 center={true}
                 blockKeys={true}
