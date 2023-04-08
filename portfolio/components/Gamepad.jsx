@@ -75,22 +75,24 @@ export default function Gamepad() {
         const handleTouchStart = (event) => {
             event.preventDefault();
             const rect = canvas.getBoundingClientRect();
-            const x = event.touches[0].clientX - rect.left;
-            const y = event.touches[0].clientY - rect.top;
+            const joisticx = event.touches[0].clientX - rect.left;
+            const joisticy = event.touches[0].clientY - rect.top;
 
             // left 
-            updateButton(x, y, 30, 100, 80, 60, 'left', 37)
+            updateButton(joisticx, joisticy, 30, 100, 80, 60, 'left', 37)
             // right 
-            updateButton(x, y, 150, 100, 80, 60, 'right', 39)
+            updateButton(joisticx, joisticy, 150, 100, 80, 60, 'right', 39)
             // up 
-            updateButton(x, y, 100, 20, 60, 80, 'up', 38)
+            updateButton(joisticx, joisticy, 100, 20, 60, 80, 'up', 38)
             // down 
-            updateButton(x, y, 100, 160, 60, 80, 'down', 40)
+            updateButton(joisticx, joisticy, 100, 160, 60, 80, 'down', 40)
 
+            const buttonx = event.touches[1].clientX - rect.left;
+            const buttony = event.touches[1].clientY - rect.top;
             // z
-            updateButton(x, y, 300, 40, 60, 80, '弾発射', 90)
+            updateButton(buttonx, buttony, 300, 40, 60, 80, '弾発射', 90)
             // x
-            updateButton(x, y, 260, 100, 60, 80, 'ボックス', 88)
+            updateButton(buttonx, buttony, 260, 100, 60, 80, 'ボックス', 88)
         };
         const handleTouchEnd = () => {
             isButtonPressed = false;
