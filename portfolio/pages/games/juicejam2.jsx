@@ -26,8 +26,8 @@ export default function Juicejam2() {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
 
-        canvas.width = 200;
-        canvas.height = 100;
+        canvas.width = 500;
+        canvas.height = 500;
 
         let isButtonPressed = false;
 
@@ -37,7 +37,7 @@ export default function Juicejam2() {
             if (isButtonPressed) {
                 ctx.fillStyle = '#ccc';
             } else {
-                ctx.fillStyle = '#fff';
+                ctx.fillStyle = '#ddd';
             }
 
             ctx.fillRect(x, y, width, height);
@@ -50,14 +50,20 @@ export default function Juicejam2() {
         };
 
         const handleMouseDown = (event) => {
+            canvas.addEventListener('mousedown', () => {
+            });
             const rect = canvas.getBoundingClientRect();
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
 
-            if (x >= 0 && x < canvas.width && y >= 0 && y < canvas.height) {
+            if (x >= 50 && x < 50 + 100 && y >= 20 && y < 20 + 60) {
                 isButtonPressed = true;
                 drawButton(50, 20, 100, 60, 'Click me!');
                 document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 37 }));
+            } else {
+                isButtonPressed = false;
+                drawButton(50, 20, 100, 60, 'Click me!');
+                document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 37 }));
             }
         };
 
@@ -85,7 +91,8 @@ export default function Juicejam2() {
             document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 37 }));
         };
 
-        canvas.addEventListener('mousedown', handleMouseDown);
+        // canvas.addEventListener('mousedown', handleMouseDown);
+        canvas.addEventListener('mousemove', handleMouseDown);
         canvas.addEventListener('mouseup', handleMouseUp);
         canvas.addEventListener('touchstart', handleTouchStart);
         canvas.addEventListener('touchend', handleTouchEnd);
