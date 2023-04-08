@@ -31,6 +31,9 @@ export default function Home({ portfolio, blog }) {
           <p>→<Link href='blog/page/1' className='hover:underline'>適当なブログ</Link></p>
           <p>→<Link href='portfolio/page/1' className='hover:underline'>今まで作ったものいろいろ</Link></p>
 
+          <p>→<Link href='games/re_dream' className='hover:underline'>Re: dream</Link></p>
+          <p>→<Link href='games/juicejam2' className='hover:underline'>juicejam2</Link></p>
+
           {/* <div className='mt-16'>
             <h2 className='text-3xl'><Link href={"/portfolio/page/1"} >＞works</Link></h2>
             <ul className='pl-8 mt-2'>
