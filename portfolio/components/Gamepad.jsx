@@ -103,24 +103,41 @@ export default function Gamepad() {
             event.preventDefault();
             const rect = canvas.getBoundingClientRect();
 
-            for (var i = 0; i < event.touches.length; i++) {
-                const x = event.touches[i].clientX - rect.left;
-                const y = event.touches[i].clientY - rect.top;
+            // for (var i = 0; i < event.touches.length; i++) {
+            // }
+            const onex = event.touches[0].clientX - rect.left;
+            const oney = event.touches[0].clientY - rect.top;
 
-                // left 
-                updateButton(x, y, leftButton.x, leftButton.y, leftButton.w, leftButton.h, leftButton.name, leftButton.key)
-                // right 
-                updateButton(x, y, rightButton.x, rightButton.y, rightButton.w, rightButton.h, rightButton.name, rightButton.key)
-                // up 
-                updateButton(x, y, upButton.x, upButton.y, upButton.w, upButton.h, upButton.name, upButton.key)
-                // down 
-                updateButton(x, y, downButton.x, downButton.y, downButton.w, downButton.h, downButton.name, downButton.key)
+            // left 
+            updateButton(onex, oney, leftButton.x, leftButton.y, leftButton.w, leftButton.h, leftButton.name, leftButton.key)
+            // right 
+            updateButton(onex, oney, rightButton.x, rightButton.y, rightButton.w, rightButton.h, rightButton.name, rightButton.key)
+            // up 
+            updateButton(onex, oney, upButton.x, upButton.y, upButton.w, upButton.h, upButton.name, upButton.key)
+            // down 
+            updateButton(onex, oney, downButton.x, downButton.y, downButton.w, downButton.h, downButton.name, downButton.key)
 
-                // z
-                updateButton(x, y, zButton.x, zButton.y, zButton.w, zButton.h, zButton.name, zButton.key)
-                // x
-                updateButton(x, y, xButton.x, xButton.y, xButton.w, xButton.h, xButton.name, xButton.key)
-            }
+            // z
+            updateButton(x, y, zButton.x, zButton.y, zButton.w, zButton.h, zButton.name, zButton.key)
+            // x
+            updateButton(x, y, xButton.x, xButton.y, xButton.w, xButton.h, xButton.name, xButton.key)
+
+            const twox = event.touches[1].clientX - rect.left;
+            const twoy = event.touches[1].clientY - rect.top;
+
+            // left 
+            updateButton(twox, twoy, leftButton.x, leftButton.y, leftButton.w, leftButton.h, leftButton.name, leftButton.key)
+            // right 
+            updateButton(twox, twoy, rightButton.x, rightButton.y, rightButton.w, rightButton.h, rightButton.name, rightButton.key)
+            // up 
+            updateButton(twox, twoy, upButton.x, upButton.y, upButton.w, upButton.h, upButton.name, upButton.key)
+            // down 
+            updateButton(twox, twoy, downButton.x, downButton.y, downButton.w, downButton.h, downButton.name, downButton.key)
+
+            // z
+            updateButton(x, y, zButton.x, zButton.y, zButton.w, zButton.h, zButton.name, zButton.key)
+            // x
+            updateButton(x, y, xButton.x, xButton.y, xButton.w, xButton.h, xButton.name, xButton.key)
             ctx.fillText("touches.length" + event.touches.length, 90, 20)
 
         };
