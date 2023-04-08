@@ -18,6 +18,8 @@ import Footer from '../../components/Footer'
 
 
 export default function Juicejam2() {
+
+
     const canvasRef = useRef(null);
 
     useEffect(() => {
@@ -55,26 +57,46 @@ export default function Juicejam2() {
             if (x >= 0 && x < canvas.width && y >= 0 && y < canvas.height) {
                 isButtonPressed = true;
                 drawButton(50, 20, 100, 60, 'Click me!');
-                document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 90 }));
+                document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 37 }));
             }
         };
 
         const handleMouseUp = () => {
             isButtonPressed = false;
             drawButton(50, 20, 100, 60, 'Click me!');
-            document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 90 }));
+            document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 37 }));
+        };
+
+        const handleTouchStart = (event) => {
+            event.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const x = event.touches[0].clientX - rect.left;
+            const y = event.touches[0].clientY - rect.top;
+
+            if (x >= 0 && x < canvas.width && y >= 0 && y < canvas.height) {
+                isButtonPressed = true;
+                drawButton(50, 20, 100, 60, 'Click me!');
+                document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 37 }));
+            }
+        };
+        const handleTouchEnd = () => {
+            isButtonPressed = false;
+            drawButton(50, 20, 100, 60, 'Click me!');
+            document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 37 }));
         };
 
         canvas.addEventListener('mousedown', handleMouseDown);
         canvas.addEventListener('mouseup', handleMouseUp);
+        canvas.addEventListener('touchstart', handleTouchStart);
+        canvas.addEventListener('touchend', handleTouchEnd);
 
         return () => {
             canvas.removeEventListener('mousedown', handleMouseDown);
             canvas.removeEventListener('mouseup', handleMouseUp);
+            canvas.removeEventListener('touchstart', handleTouchStart);
+            canvas.removeEventListener('touchend', handleTouchEnd);
         };
     }, []);
-
-
 
 
     return (
