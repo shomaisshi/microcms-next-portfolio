@@ -120,6 +120,7 @@ export default function Gamepad() {
                 // x
                 updateButton(x, y, xButton.x, xButton.y, xButton.w, xButton.h, xButton.name, xButton.key)
             }
+            fillText("touches.length" + event.touches.length, 0, 0)
 
         };
 
