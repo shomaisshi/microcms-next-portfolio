@@ -77,7 +77,7 @@ export default function Juicejam2() {
             const x = event.touches[0].clientX - rect.left;
             const y = event.touches[0].clientY - rect.top;
 
-            if (x >= 0 && x < canvas.width && y >= 0 && y < canvas.height) {
+            if (x >= 50 && x < 50 + 100 && y >= 20 && y < 20 + 60) {
                 isButtonPressed = true;
                 drawButton(50, 20, 100, 60, 'Click me!');
                 document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 37 }));
@@ -94,18 +94,18 @@ export default function Juicejam2() {
         };
 
         canvas.addEventListener('mousedown', handleMouseDown);
-        // canvas.addEventListener('mousemove', handleMouseDown);
+        canvas.addEventListener('mousemove', handleMouseDown);
         canvas.addEventListener('mouseup', handleMouseUp);
         canvas.addEventListener('touchstart', handleTouchStart);
-        // canvas.addEventListener('touchmove', handleTouchStart);
+        canvas.addEventListener('touchmove', handleTouchStart);
         canvas.addEventListener('touchend', handleTouchEnd);
 
         return () => {
             canvas.removeEventListener('mousedown', handleMouseDown);
-            // canvas.removeEventListener('mousemove', handleMouseDown);
+            canvas.removeEventListener('mousemove', handleMouseDown);
             canvas.removeEventListener('mouseup', handleMouseUp);
             canvas.removeEventListener('touchstart', handleTouchStart);
-            // canvas.removeEventListener('touchmove', handleTouchStart);
+            canvas.removeEventListener('touchmove', handleTouchStart);
             canvas.removeEventListener('touchend', handleTouchEnd);
         };
     }, []);
