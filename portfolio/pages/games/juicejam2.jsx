@@ -83,6 +83,10 @@ export default function Juicejam2() {
                 isButtonPressed = true;
                 drawButton(50, 20, 100, 60, 'Click me!');
                 document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 37 }));
+            } else {
+                isButtonPressed = false;
+                drawButton(50, 20, 100, 60, 'Click me!');
+                document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 37 }));
             }
         };
         const handleTouchEnd = () => {
