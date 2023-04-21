@@ -20,7 +20,7 @@ export default function BlogId({ blog }) {
                 pageImg={'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
             />
             <Header page={'blog'} />
-            <main className="md:text-xl md:w-8/12 p-2 md:p-8" >
+            <main className="md:text-xl md:max-w-[720px] p-2 md:p-8 md:ml-auto md:mr-auto" >
                 <div className="leading-relaxed">
                     {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-video object-cover w-full" /> : null}
                     <div className="mt-2">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>

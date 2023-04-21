@@ -33,7 +33,7 @@ export default function BlogPageId({ blog, totalCount }) {
                             </li>
                         ))}
                     </ul>
-                    <Pagination totalCount={totalCount} folder={'portfolio'} />
+                    <Pagination totalCount={totalCount} folder={'portfolio'} per_page={PER_PAGE} />
                 </div>
 
                 <Footer />

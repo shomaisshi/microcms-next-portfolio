@@ -14,7 +14,7 @@ import timezone from 'dayjs/plugin/timezone';
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-const PER_PAGE = 20;
+const PER_PAGE = 6;
 
 // pages/blog/[id].js
 export default function BlogPageId({ blog, totalCount }) {
@@ -47,17 +47,21 @@ export default function BlogPageId({ blog, totalCount }) {
                         <Pagination totalCount={totalCount} folder={'blog'} />
                     </div> */}
 
-                    <div>
+                    <div className='max-w-[900px] ml-auto mr-auto'>
                         <div className='md:text-2xl font-bold'>blog</div>
-                        <ul className="mt-4 grid gap-2 md:text-xl">
+                        <ul className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4 gap-y-12 md:text-xl">
                             {blog.map((blog) => (
                                 <li key={blog.id} className='list-none md:text-xl'>
-                                    <Link href={`/blog/${blog.id}`} className='hover:underline' >{blog.title}</Link>
+                                    <Link href={`/blog/${blog.id}`} className='' >
+                                        {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-video object-cover w-full rounded-md" /> : null}
+                                        <div className="text-sm">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
+                                        <div className='font-bold'>{blog.title}</div>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
 
-                        <Pagination totalCount={totalCount} folder={'blog'} />
+                        <Pagination totalCount={totalCount} folder={'blog'} per_page={PER_PAGE} />
                     </div>
                 </div>
             </div>
