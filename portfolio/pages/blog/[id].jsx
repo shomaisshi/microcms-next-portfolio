@@ -8,6 +8,11 @@ import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 
+// font awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
@@ -23,7 +28,10 @@ export default function BlogId({ blog }) {
             <main className="md:text-xl md:max-w-[720px] p-2 md:p-8 md:ml-auto md:mr-auto" >
                 <div className="leading-relaxed">
                     {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-video object-cover w-full" /> : null}
-                    <div className="mt-2">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
+                    <div className='mt-4 flex gap-1 items-center'>
+                        <FontAwesomeIcon icon={faCalendar} className="h-[14px]" />
+                        <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
+                    </div>
                     <h1 className="mt-2 text-3xl md:text-4xl font-bold">{blog.title}</h1>
                     <div className="mt-6 post"
                         dangerouslySetInnerHTML={{
@@ -32,7 +40,12 @@ export default function BlogId({ blog }) {
                     />
 
                     <div className="mt-8">
-                        <Link href={"/blog/page/1"} className='underline'>→blog一覧に戻る</Link>
+                        <Link href={"/blog/page/1"} className='underline'>
+                            <div className="flex items-center gap-1">
+                                <FontAwesomeIcon icon={faArrowLeft} className="h-[14px]" />
+                                blog一覧に戻る
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </main>

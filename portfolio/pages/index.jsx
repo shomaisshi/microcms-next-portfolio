@@ -9,6 +9,11 @@ import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// font awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
+import { faDonut } from "@fortawesome/free-solid-svg-icons";
+
 export default function Home({ portfolio, blog }) {
   return (
     <>
@@ -23,16 +28,14 @@ export default function Home({ portfolio, blog }) {
 
         <div className='md:w-8/12 p-2 md:p-8 leading-relaxed md:text-xl'>
           {/* <Image src="/OGP.png" alt="" width={200} height={200} /> */}
+          <FontAwesomeIcon icon={faDonut} className='h-[56px]' />
           <p className='mt-0'>
             shomaです。<br />
-            インディーゲーム作ったりしてます。<br />
+            インディーゲーム作ったりしてます。<br /><br />
           </p>
-          <p>→<a href='https://donutshunter.itch.io' className='hover:underline'>作った小さなゲーム作品（itchへとびます）</a></p>
-          <p>→<Link href='blog/page/1' className='hover:underline'>適当なブログ</Link></p>
-          <p>→<Link href='portfolio/page/1' className='hover:underline'>今まで作ったものいろいろ</Link></p>
-
-          <p>→<Link href='games/re_dream' className='hover:underline'>Re: dream</Link></p>
-          <p>→<Link href='games/juicejam2' className='hover:underline'>juicejam2</Link></p>
+          <p>→<a href='https://donutshunter.itch.io' className='hover:underline'>Tiny games（itchへとびます）</a></p>
+          <p>→<Link href='blog/page/1' className='hover:underline'>Blog</Link></p>
+          <p>→<Link href='portfolio/page/1' className='hover:underline'>Works</Link></p>
 
           {/* <div className='mt-16'>
             <h2 className='text-3xl'><Link href={"/portfolio/page/1"} >＞works</Link></h2>
@@ -66,7 +69,10 @@ export default function Home({ portfolio, blog }) {
           </div>
 
           <div className='mt-8'>
-            <h2>Contact</h2>
+            <h2 className='flex items-center gap-1'>
+              <FontAwesomeIcon icon={faAddressBook} className='h-[16px]' />
+              Contact
+            </h2>
             <div>shoma.s.1219@gmail.com</div>
             <div>
               <div className='flex gap-3'>

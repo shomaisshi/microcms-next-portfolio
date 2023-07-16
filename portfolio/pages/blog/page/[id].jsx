@@ -11,10 +11,14 @@ import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 
+// font awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-const PER_PAGE = 6;
+const PER_PAGE = 9;
 
 // pages/blog/[id].js
 export default function BlogPageId({ blog, totalCount }) {
@@ -29,11 +33,14 @@ export default function BlogPageId({ blog, totalCount }) {
 
             {/* main  */}
             <div className='p-2 md:p-8'>
-                <div className="mt-2 md:flex gap-4">
-                    {/* <div>
+                <div className="mt-2 md:flex md:justify-between gap-4">
+                    <div className='max-w-[720px]'>
                         {blog.map((blog) => (
                             <div key={blog.id} className="mb-20 md:mb-36 leading-relaxed">
-                                <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
+                                <div className='flex gap-1 items-center'>
+                                    <FontAwesomeIcon icon={faCalendar} className="h-[12px]" />
+                                    <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
+                                </div>
                                 <div className="mt-2">
                                     <Link href={`/blog/${blog.id}`} className="text-2xl md:text-3xl font-bold">{blog.title}</Link>
                                 </div>
@@ -44,24 +51,26 @@ export default function BlogPageId({ blog, totalCount }) {
                                 />
                             </div>
                         ))}
-                        <Pagination totalCount={totalCount} folder={'blog'} />
-                    </div> */}
+                        <Pagination totalCount={totalCount} folder={'blog'} per_page={PER_PAGE} />
+                    </div>
 
-                    <div className='max-w-[900px] ml-auto mr-auto'>
-                        <div className='md:text-2xl font-bold'>blog</div>
-                        <ul className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4 gap-y-12 md:text-xl">
+                    <div className='w-72'>
+                        {/* <div className='md:text-2xl font-bold'>blog</div> */}
+                        <ul className="flex flex-col gap-4 md:text-xl">
                             {blog.map((blog) => (
                                 <li key={blog.id} className='list-none md:text-xl'>
                                     <Link href={`/blog/${blog.id}`} className='' >
-                                        {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-video object-cover w-full rounded-md" /> : null}
+
                                         <div className="text-sm">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
-                                        <div className='font-bold'>{blog.title}</div>
+                                        <div className='text-sm font-bold'>{blog.title}</div>
+
+                                        {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-square object-cover w-40" /> : null} */}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
 
-                        <Pagination totalCount={totalCount} folder={'blog'} per_page={PER_PAGE} />
+                        {/* <Pagination totalCount={totalCount} folder={'blog'} per_page={PER_PAGE} /> */}
                     </div>
                 </div>
             </div>
