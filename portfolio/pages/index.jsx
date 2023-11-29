@@ -29,7 +29,7 @@ export default function Home({ portfolio, blog }) {
         <div className='md:w-8/12 p-2 md:p-8 leading-relaxed md:text-xl'>
           {/* <Image src="/OGP.png" alt="" width={200} height={200} /> */}
           <FontAwesomeIcon icon={faDonut} className='h-[56px]' />
-          {/* <iframe src="https://www.lexaloffle.com/bbs/widget.php?pid=motionrec" allowfullscreen width="621" height="513" className='mt-8 overflow-hidden'></iframe> */}
+          <iframe src="https://www.lexaloffle.com/bbs/widget.php?pid=motionrec" allowfullscreen width="621" height="513" className='hidden md:block mt-8 overflow-hidden'></iframe>
 
           <p className='mt-0'>
             shomaです。<br />
