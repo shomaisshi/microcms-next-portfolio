@@ -29,13 +29,17 @@ export default function Home({ portfolio, blog }) {
         <div className='md:w-8/12 p-2 md:p-8 leading-relaxed md:text-xl'>
           {/* <Image src="/OGP.png" alt="" width={200} height={200} /> */}
           <FontAwesomeIcon icon={faDonut} className='h-[56px]' />
-          <p className='mt-0'>
+          <iframe src="https://www.lexaloffle.com/bbs/widget.php?pid=motionrec" allowfullscreen width="621" height="513" className='mt-8 overflow-hidden'></iframe>
+
+          <p className='mt-4'>
             shomaです。<br />
             インディーゲーム作ったりしてます。<br /><br />
           </p>
+
           <p>→<a href='https://donutshunter.itch.io' className='hover:underline'>Tiny games（itchへとびます）</a></p>
           <p>→<Link href='blog/page/1' className='hover:underline'>Blog</Link></p>
           <p>→<Link href='portfolio/page/1' className='hover:underline'>Works</Link></p>
+
 
           {/* <div className='mt-16'>
             <h2 className='text-3xl'><Link href={"/portfolio/page/1"} >＞works</Link></h2>
