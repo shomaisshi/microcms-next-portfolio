@@ -33,13 +33,13 @@ export default function BlogPageId({ blog, totalCount }) {
 
             {/* main  */}
             <div className='p-2 md:p-8'>
-                <div className="mt-2 md:flex md:justify-between gap-4">
+                <div className="md:flex md:justify-between gap-4">
                     <div className='max-w-[720px]'>
                         {blog.map((blog) => (
                             <div key={blog.id} className="mb-20 md:mb-36 leading-relaxed">
                                 <div className='flex gap-1 items-center'>
                                     <FontAwesomeIcon icon={faCalendar} className="h-[12px]" />
-                                    <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
+                                    <div className="leading-4">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
                                 </div>
                                 <div className="mt-2">
                                     <Link href={`/blog/${blog.id}`} className="text-2xl md:text-3xl">{blog.title}</Link>
@@ -61,7 +61,7 @@ export default function BlogPageId({ blog, totalCount }) {
                                 <li key={blog.id} className='list-none md:text-xl'>
                                     <Link href={`/blog/${blog.id}`} className='' >
 
-                                        <div className="text-sm">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
+                                        <div className="text-sm leading-4">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
                                         <div className='text-sm'>{blog.title}</div>
 
                                         {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-square object-cover w-40" /> : null} */}
