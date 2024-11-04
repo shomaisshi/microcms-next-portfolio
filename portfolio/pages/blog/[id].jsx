@@ -25,14 +25,14 @@ export default function BlogId({ blog }) {
                 pageImg={'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
             />
             <Header page={'blog'} />
-            <main className="md:text-xl md:max-w-[720px] p-2 md:p-8 md:ml-auto md:mr-auto" >
+            <main className="md:w-8/12 p-2 md:p-8" >
                 <div className="leading-relaxed">
                     {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-video object-cover w-full" /> : null}
                     <div className='mt-4 flex gap-1 items-center'>
                         <FontAwesomeIcon icon={faCalendar} className="h-[14px]" />
                         <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
                     </div>
-                    <h1 className="mt-2 text-3xl md:text-4xl font-bold">{blog.title}</h1>
+                    <h1 className="mt-2 text-3xl md:text-4xl">{blog.title}</h1>
                     <div className="mt-6 post"
                         dangerouslySetInnerHTML={{
                             __html: `${blog.content}`,

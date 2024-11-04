@@ -42,7 +42,7 @@ export default function BlogPageId({ blog, totalCount }) {
                                     <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
                                 </div>
                                 <div className="mt-2">
-                                    <Link href={`/blog/${blog.id}`} className="text-2xl md:text-3xl font-bold">{blog.title}</Link>
+                                    <Link href={`/blog/${blog.id}`} className="text-2xl md:text-3xl">{blog.title}</Link>
                                 </div>
                                 <div className="mt-6 post"
                                     dangerouslySetInnerHTML={{
@@ -62,7 +62,7 @@ export default function BlogPageId({ blog, totalCount }) {
                                     <Link href={`/blog/${blog.id}`} className='' >
 
                                         <div className="text-sm">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
-                                        <div className='text-sm font-bold'>{blog.title}</div>
+                                        <div className='text-sm'>{blog.title}</div>
 
                                         {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-square object-cover w-40" /> : null} */}
                                     </Link>
