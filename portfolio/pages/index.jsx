@@ -64,8 +64,8 @@ export default function Home({ portfolio, blog }) {
           </div> */}
 
           <div className="mt-16">
-            <h2>Shoma Kato</h2>
-            <div>ゲームジャマー</div>
+            {/* <h2>Shoma Kato</h2>
+            <div>ゲームジャマー</div> */}
 
             <div className='mt-4'>HANDSUM inc.</div>
             <div>2020: 多摩美術大学統合デザイン学科卒業</div>
