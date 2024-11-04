@@ -18,7 +18,7 @@ import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-const PER_PAGE = 9;
+const PER_PAGE = 20;
 
 // pages/blog/[id].js
 export default function BlogPageId({ blog, totalCount }) {
@@ -34,7 +34,7 @@ export default function BlogPageId({ blog, totalCount }) {
             {/* main  */}
             <div className='p-2 md:p-8'>
                 <div className="md:flex md:justify-between gap-4">
-                    <div className='max-w-[720px]'>
+                    {/* <div className='max-w-[720px]'>
                         {blog.map((blog) => (
                             <div key={blog.id} className="mb-20 md:mb-36 leading-relaxed">
                                 <div className='flex gap-1 items-center'>
@@ -52,17 +52,17 @@ export default function BlogPageId({ blog, totalCount }) {
                             </div>
                         ))}
                         <Pagination totalCount={totalCount} folder={'blog'} per_page={PER_PAGE} />
-                    </div>
+                    </div> */}
 
                     <div className='w-72'>
                         {/* <div className='md:text-2xl font-bold'>blog</div> */}
-                        <ul className="flex flex-col gap-4 md:text-xl">
+                        <ul className="flex flex-col gap-8 md:text-xl">
                             {blog.map((blog) => (
                                 <li key={blog.id} className='list-none md:text-xl'>
                                     <Link href={`/blog/${blog.id}`} className='' >
 
                                         <div className="text-sm leading-4">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
-                                        <div className='text-sm'>{blog.title}</div>
+                                        <div className='text-base'>{blog.title}</div>
 
                                         {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-square object-cover w-40" /> : null} */}
                                     </Link>
@@ -70,7 +70,7 @@ export default function BlogPageId({ blog, totalCount }) {
                             ))}
                         </ul>
 
-                        {/* <Pagination totalCount={totalCount} folder={'blog'} per_page={PER_PAGE} /> */}
+                        <Pagination totalCount={totalCount} folder={'blog'} per_page={PER_PAGE} />
                     </div>
                 </div>
             </div>
