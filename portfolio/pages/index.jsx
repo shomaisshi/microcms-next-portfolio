@@ -33,7 +33,7 @@ export default function Home({ portfolio, blog }) {
 
           <p className='mt-0'>
             shomaです。<br />
-            インディーゲーム作ったりしてます。<br /><br />
+            触って楽しいものを作るのが好き。<br /><br />
           </p>
 
           <p>→<a href='https://donutshunter.itch.io' className='hover:underline'>Tiny games（itchへとびます）</a></p>
