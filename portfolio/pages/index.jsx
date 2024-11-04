@@ -67,9 +67,8 @@ export default function Home({ portfolio, blog }) {
             <h2>Shoma Kato</h2>
             <div>ゲームジャマー</div>
 
-            {/* <div className='mt-4'>2021~2023現在：株式会社ハンドサム</div>
-            <div>2020~2021：株式会社ドットインストール</div>
-            <div>2020：多摩美術大学統合デザイン学科卒業</div> */}
+            <div className='mt-4'>HANDSUM inc.</div>
+            <div>2020: 多摩美術大学統合デザイン学科卒業</div>
           </div>
 
           <div className='mt-8'>
