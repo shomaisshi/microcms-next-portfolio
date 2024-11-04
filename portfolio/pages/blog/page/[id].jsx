@@ -59,10 +59,10 @@ export default function BlogPageId({ blog, totalCount }) {
                         <ul className="flex flex-col gap-8 md:text-xl">
                             {blog.map((blog) => (
                                 <li key={blog.id} className='list-none md:text-xl'>
-                                    <Link href={`/blog/${blog.id}`} className='' >
+                                    <Link href={`/blog/${blog.id}`} className='hover:underline' >
 
                                         <div className="text-sm leading-4">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
-                                        <div className='text-base'>{blog.title}</div>
+                                        <div className='text-base md:text-xl'>{blog.title}</div>
 
                                         {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-square object-cover w-40" /> : null} */}
                                     </Link>
