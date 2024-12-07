@@ -157,7 +157,7 @@ a {
   height: auto;
 }
 
-.post code {
+.post pre {
   background: ghostwhite;
   overflow: scroll;
 }
