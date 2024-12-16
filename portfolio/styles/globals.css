@@ -81,8 +81,8 @@ body {
   overflow-x: hidden;
   color: #323232;
   /* font-family: 'Noto Sans JP', sans-serif; */
-  font-feature-settings: "palt";
-  letter-spacing: 1.5px;
+  /* font-feature-settings: "palt"; */
+  /* letter-spacing: 1.5px; */
 }
 
 body {}
