@@ -6,7 +6,6 @@ import { client } from "../libs/client";
 import MyHead from '../components/MyHead'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -95,7 +94,6 @@ export default function Home({ portfolio, blog }) {
       </main>
 
       <Footer />
-      <Analytics />
     </>
   )
 }
