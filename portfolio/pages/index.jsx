@@ -32,7 +32,7 @@ export default function Home({ portfolio, blog }) {
           {/* <iframe src="https://www.lexaloffle.com/bbs/widget.php?pid=motionrec" allowfullscreen width="621" height="513" className='hidden md:block mt-8 overflow-hidden'></iframe> */}
 
           <Image
-            src="/images/bg_sky_study.png"
+            src="/images/moon_bg_study_5.png"
             alt="game image"
             width={400}              // お好みのサイズに調整
             height={400}             // お好みのサイズに調整
