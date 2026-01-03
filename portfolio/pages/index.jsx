@@ -34,8 +34,8 @@ export default function Home({ portfolio, blog }) {
           <Image
             src="/images/moon_bg_study_5.png"
             alt="game image"
-            width={400}              // お好みのサイズに調整
-            height={400}             // お好みのサイズに調整
+            width={384}              // お好みのサイズに調整
+            height={384}             // お好みのサイズに調整
             className="mb-4"         // 必要に応じてスタイリング
           />
 
