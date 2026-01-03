@@ -31,6 +31,14 @@ export default function Home({ portfolio, blog }) {
           <FontAwesomeIcon icon={faDonut} className='h-[56px]' />
           {/* <iframe src="https://www.lexaloffle.com/bbs/widget.php?pid=motionrec" allowfullscreen width="621" height="513" className='hidden md:block mt-8 overflow-hidden'></iframe> */}
 
+          <Image
+            src="/images/bg_sky_study.png"
+            alt="game image"
+            width={400}              // お好みのサイズに調整
+            height={400}             // お好みのサイズに調整
+            className="mb-4"         // 必要に応じてスタイリング
+          />
+
           <p className='mt-0'>
             shomaです。<br />
             触って楽しいものを作るのが好き。<br /><br />
