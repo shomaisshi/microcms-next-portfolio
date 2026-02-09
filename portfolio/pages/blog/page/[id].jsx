@@ -61,10 +61,10 @@ export default function BlogPageId({ blog, totalCount }) {
                                 <li key={blog.id} className='list-none md:text-xl'>
                                     <Link href={`/blog/${blog.id}`} className='hover:underline' >
 
+                                        {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-video object-cover w-auto rounded-lg" /> : null} */}
                                         <div className="text-sm leading-4">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
                                         <div className='text-base md:text-xl'>{blog.title}</div>
 
-                                        {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-square object-cover w-40" /> : null} */}
                                     </Link>
                                 </li>
                             ))}

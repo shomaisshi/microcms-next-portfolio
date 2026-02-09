@@ -96,6 +96,7 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     /* color-scheme: dark; */
+    font-size: 16px;
   }
 }
 
@@ -105,19 +106,15 @@ a {
 
 .post h2 {
   margin: 8px 0;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .post h3 {
   margin: 8px 0;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 1.2rem;
 }
 
-.post h4 {
-  font-weight: 400;
-}
+.post h4 {}
 
 .post ol {
   margin: 8px 0;
@@ -147,8 +144,8 @@ a {
 }
 
 .post p {
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .post iframe {
@@ -163,13 +160,17 @@ a {
   overflow: scroll;
 }
 
+.post img {
+  border-radius: 8px;
+}
+
 @media screen and (min-width: 700px) {
   .post p {
-    font-size: 20px;
+    font-size: 1.2rem;
     line-height: 1.8;
   }
 
   .post h2 {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }

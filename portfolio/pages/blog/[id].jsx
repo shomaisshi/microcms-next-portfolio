@@ -25,7 +25,7 @@ export default function BlogId({ blog }) {
                 pageImg={'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
             />
             <Header page={'blog'} />
-            <main className="md:w-8/12 p-2 md:p-8" >
+            <main className="md:w-[700px] p-2 md:p-8 md:m-auto" >
                 <div className="leading-relaxed">
                     {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-video object-cover w-full" /> : null}
                     <div className='mt-4 flex gap-1 items-center'>
@@ -65,9 +65,21 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
     const data = await client.get({ endpoint: "blog", contentId: id });
+    // data.content = data.content.replace(
+    //     /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|gif|png))"/g,
+    //     '"$1?fit=max&w=1024&fm=webp"'
+    // );
+
+    // GIF以外の画像だけwebpに変換
     data.content = data.content.replace(
-        /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|gif|png))"/g,
+        /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|png))"/g,
         '"$1?fit=max&w=1024&fm=webp"'
+    );
+
+    // GIFは最適化パラメータを付けずにそのまま、またはサイズだけ制限
+    data.content = data.content.replace(
+        /"(https?:\/\/images\.microcms-assets\.io\/.+?\.gif)"/g,
+        '"$1?fit=max&w=1024"'  // fm=webpを付けない
     );
 
     return {
