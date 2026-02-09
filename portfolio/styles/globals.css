@@ -104,17 +104,25 @@ a {
 /* post */
 .post {}
 
+.post h1 {
+  font-weight: 600;
+}
+
 .post h2 {
+  font-weight: 600;
   margin: 8px 0;
   font-size: 1.5rem;
 }
 
 .post h3 {
+  font-weight: 600;
   margin: 8px 0;
   font-size: 1.2rem;
 }
 
-.post h4 {}
+.post h4 {
+  font-weight: 600;
+}
 
 .post ol {
   margin: 8px 0;

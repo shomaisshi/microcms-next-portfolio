@@ -76,12 +76,6 @@ export const getStaticProps = async (context) => {
         '"$1?fit=max&w=1024&fm=webp"'
     );
 
-    // GIFは最適化パラメータを付けずにそのまま、またはサイズだけ制限
-    data.content = data.content.replace(
-        /"(https?:\/\/images\.microcms-assets\.io\/.+?\.gif)"/g,
-        '"$1?fit=max&w=1024"'  // fm=webpを付けない
-    );
-
     return {
         props: {
             blog: data,

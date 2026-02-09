@@ -41,9 +41,15 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
     const data = await client.get({ endpoint: "portfolio", contentId: id });
+    // data.content = data.content.replace(
+    //     /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|gif|png))"/g,
+    //     '"$1?fit=max&w=400&fm=webp"'
+    // );
+
+    // GIF以外の画像だけwebpに変換
     data.content = data.content.replace(
-        /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|gif|png))"/g,
-        '"$1?fit=max&w=400&fm=webp"'
+        /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|png))"/g,
+        '"$1?fit=max&w=1024&fm=webp"'
     );
 
     return {
