@@ -1,4 +1,4 @@
-// pages/blog/page/[id].js
+// pages/portfolio/page/[id].js
 import Link from 'next/link';
 import { Pagination } from '../../../components/Pagination';
 import { client } from "../../../libs/client";
@@ -8,8 +8,7 @@ import Footer from '../../../components/Footer'
 
 const PER_PAGE = 20;
 
-// pages/blog/[id].js
-export default function BlogPageId({ blog, totalCount }) {
+export default function PortfolioPageId({ portfolio, totalCount, currentPage }) {
     return (
         <div>
             <MyHead
@@ -20,22 +19,34 @@ export default function BlogPageId({ blog, totalCount }) {
             <div className=''>
                 <Header page={'works'} />
 
-                {/* main  */}
-                <div className='p-2 md:p-8'>
+                {/* main */}
+                <div className='m-auto md:w-[700px] lg:w-[1000px] p-2 md:p-8'>
                     <div className='md:text-2xl font-bold'>works</div>
-                    <ul className='mt-4 grid gap-2 md:text-xl'>
-                        {blog.map(blog => (
-                            <li key={blog.id}>
-                                <Link href={`/portfolio/${blog.id}`} className='hover:underline'>
-                                    {/* {blog.eyecatch ? <img src={blog.eyecatch.url + "?w=324"} alt="eyecatch" /> : null} */}
-                                    {blog.title}
+                    <ul className='mt-4 grid md:grid-cols-2 lg:grid-cols-3  gap-8 md:text-xl'>
+                        {portfolio.map(item => (
+                            <li key={item.id} className='w-[300px]'>
+                                <Link href={`/portfolio/${item.id}`} className='hover:underline'>
+                                    {/* アイキャッチ画像を表示する場合 */}
+                                    {item.eyecatch ? (
+                                        <img
+                                            src={item.eyecatch.url + "?w=324"}
+                                            alt="eyecatch"
+                                            className="mb-2 aspect-video object-cover rounded"
+                                        />
+                                    ) : null}
+                                    {item.title}
                                 </Link>
                             </li>
                         ))}
                     </ul>
-                    <Pagination totalCount={totalCount} folder={'portfolio'} per_page={PER_PAGE} />
-                </div>
 
+                    <Pagination
+                        totalCount={totalCount}
+                        folder={'portfolio'}
+                        per_page={PER_PAGE}
+                        currentPage={currentPage} // 現在ページを追加
+                    />
+                </div>
                 <Footer />
             </div>
         </div>
@@ -44,10 +55,15 @@ export default function BlogPageId({ blog, totalCount }) {
 
 // 動的なページを作成
 export const getStaticPaths = async () => {
-    const repos = await client.get({ endpoint: "portfolio" });
+    // 総件数のみ取得（パフォーマンス改善）
+    const repos = await client.get({
+        endpoint: "portfolio",
+        queries: {
+            limit: 0  // 件数のみ取得
+        }
+    });
 
     const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
-
     const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map((repo) => `/portfolio/page/${repo}`);
 
     return { paths, fallback: false };
@@ -56,13 +72,22 @@ export const getStaticPaths = async () => {
 // データを取得
 export const getStaticProps = async (context) => {
     const id = context.params.id;
+    const currentPage = parseInt(id); // 現在のページ番号を取得
 
-    const data = await client.get({ endpoint: "portfolio", queries: { offset: (id - 1) * PER_PAGE, limit: PER_PAGE } });
+    const data = await client.get({
+        endpoint: "portfolio",
+        queries: {
+            offset: (id - 1) * PER_PAGE,
+            limit: PER_PAGE,
+            fields: "id,title,eyecatch" // 必要なフィールドのみ取得
+        }
+    });
 
     return {
         props: {
-            blog: data.contents,
+            portfolio: data.contents, // 変数名をportfolioに変更
             totalCount: data.totalCount,
+            currentPage: currentPage, // 現在ページを追加
         },
     };
 };

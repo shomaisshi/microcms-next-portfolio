@@ -39,9 +39,9 @@ export default function BlogId({ blog }) {
                         }}
                     />
 
-                    <div className="mt-8">
-                        <Link href={"/blog/page/1"} className='underline'>
-                            <div className="flex items-center gap-1">
+                    <div className="mt-20 pb-40">
+                        <Link href={"/blog/page/1"} className='hover:underline'>
+                            <div className="flex items-center gap-1 text-xl">
                                 <FontAwesomeIcon icon={faArrowLeft} className="h-[14px]" />
                                 blog一覧に戻る
                             </div>
