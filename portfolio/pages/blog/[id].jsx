@@ -73,7 +73,7 @@ export const getStaticProps = async (context) => {
     // GIF以外の画像だけwebpに変換
     data.content = data.content.replace(
         /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|png))"/g,
-        '"$1?fit=max&w=1024&fm=webp"'
+        '"$1?fit=max&w=1024&h=600&fm=webp"'
     );
 
     return {
