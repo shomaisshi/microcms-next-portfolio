@@ -47,9 +47,9 @@ export default function BlogPageId({ blog, totalCount, currentPage }) {
                                             <div className="text-sm leading-4">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
                                             <div className='text-base md:text-xl'>{blog.title}</div>
                                         </div>
-                                        <div className='ml-auto'>
+                                        <div className='ml-auto pl-2'>
                                             {blog.eyecatch ?
-                                                <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-square object-cover w-[100px] rounded-lg" />
+                                                <img src={blog.eyecatch.url + "?fit=max&w=200&fm=webp"} alt="eyecatch" className="aspect-square object-cover w-[100px] rounded-lg" />
                                                 : null}
                                         </div>
                                     </div>
