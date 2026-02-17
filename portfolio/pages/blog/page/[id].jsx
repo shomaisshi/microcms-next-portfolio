@@ -1,5 +1,6 @@
 // pages/blog/page/[id].js
 import Link from 'next/link';
+import Image from 'next/image';
 import { Pagination } from '../../../components/Pagination';
 import { client } from "../../../libs/client";
 import MyHead from '../../../components/MyHead'
@@ -47,7 +48,9 @@ export default function BlogPageId({ blog, totalCount, currentPage }) {
                                             <div className='text-base md:text-xl'>{blog.title}</div>
                                         </div>
                                         <div className='ml-auto'>
-                                            {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-square object-cover w-[100px] rounded-lg" /> : null}
+                                            {blog.eyecatch ?
+                                                <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-square object-cover w-[100px] rounded-lg" />
+                                                : null}
                                         </div>
                                     </div>
 

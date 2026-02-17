@@ -50,7 +50,7 @@ export default function Home() {
                             触って楽しいものを作るのが好き。<br /><br />
                         </p>
 
-                        <p>→<a href='https://donutshunter.itch.io' target="_blank" className='hover:underline'>Tiny games（itchへとびます）</a></p>
+                        <p>→<a href='https://donutshunter.itch.io' target="_blank" rel="noreferrer" className='hover:underline'>Tiny games（itchへとびます）</a></p>
                         <p>→<Link href='blog/page/1' className='hover:underline'>Blog</Link></p>
                         <p>→<Link href='portfolio/page/1' className='hover:underline'>Works</Link></p>
 
