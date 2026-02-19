@@ -13,7 +13,7 @@ export const Pagination = ({ totalCount, folder, per_page, currentPage = 1 }) =>
                     {folder == 'portfolio' ? (
                         <Link
                             className={`p-4 rounded-md transition-colors ${number === currentPage
-                                ? 'bg-slate-400 text-white'
+                                ? 'bg-slate-400 text-white font-bold'
                                 : 'hover:bg-gray-200'
                                 }`}
                             href={`/portfolio/page/${number}`}
@@ -25,7 +25,7 @@ export const Pagination = ({ totalCount, folder, per_page, currentPage = 1 }) =>
                     {folder == 'blog' ? (
                         <Link
                             className={`p-4 rounded-md transition-colors ${number === currentPage
-                                ? 'bg-slate-400 text-white'
+                                ? 'bg-slate-400 text-white font-bold'
                                 : 'hover:bg-gray-200'
                                 }`}
                             href={`/blog/page/${number}`}

@@ -25,27 +25,30 @@ export default function BlogId({ blog }) {
                 pageImg={'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
             />
             <Header page={'blog'} />
-            <main className="md:w-[700px] p-2 md:p-8 md:m-auto" >
+            <main className="md:w-[700px] md:p-8 md:m-auto" >
                 <div className="leading-relaxed">
                     {blog.eyecatch ? <img src={blog.eyecatch.url + "?fit=max&w=1024&fm=webp"} alt="eyecatch" className="aspect-video object-cover w-full" /> : null}
-                    <div className='mt-4 flex gap-1 items-center'>
-                        <FontAwesomeIcon icon={faCalendar} className="h-[14px]" />
-                        <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
-                    </div>
-                    <h1 className="mt-2 text-3xl md:text-4xl">{blog.title}</h1>
-                    <div className="mt-6 post"
-                        dangerouslySetInnerHTML={{
-                            __html: `${blog.content}`,
-                        }}
-                    />
 
-                    <div className="mt-20 pb-40">
-                        <Link href={"/blog/page/1"} className='hover:underline'>
-                            <div className="flex items-center gap-1 text-xl">
-                                <FontAwesomeIcon icon={faArrowLeft} className="h-[14px]" />
-                                blog一覧に戻る
-                            </div>
-                        </Link>
+                    <div className="p-6">
+                        <h1 className="md:mt-8 text-3xl md:text-4xl font-bold">{blog.title}</h1>
+                        <div className='mt-4 flex gap-1 items-center'>
+                            <FontAwesomeIcon icon={faCalendar} className="h-[14px]" />
+                            <div className="">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
+                        </div>
+                        <div className="mt-12 post"
+                            dangerouslySetInnerHTML={{
+                                __html: `${blog.content}`,
+                            }}
+                        />
+
+                        <div className="mt-20 pb-40">
+                            <Link href={"/blog/page/1"} className='hover:underline'>
+                                <div className="flex items-center gap-1 text-xl">
+                                    <FontAwesomeIcon icon={faArrowLeft} className="h-[14px]" />
+                                    blog一覧に戻る
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -71,9 +74,13 @@ export const getStaticProps = async (context) => {
     // );
 
     // GIF以外の画像だけwebpに変換
+    // data.content = data.content.replace(
+    //     /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|png))"/g,
+    //     '"$1?fit=max&w=200&h=600&fm=webp"'
+    // );
     data.content = data.content.replace(
-        /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|png))"/g,
-        '"$1?fit=max&w=1024&h=600&fm=webp"'
+        /"(https?:\/\/images\.microcms-assets\.io\/.+?\.(jpe?g|png))"/gi,
+        '"$1?fit=max&w=700&h=600&fm=webp"'
     );
 
     return {

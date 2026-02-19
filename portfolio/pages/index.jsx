@@ -32,10 +32,10 @@ export default function Home() {
           height={600}
           className='w-full'
         /> */}
-        <div className=' p-2 md:p-8 leading-relaxed md:text-xl md:w-[700px] m-auto'>
+        <div className=' p-6 md:p-8 leading-relaxed md:text-xl md:w-[700px] m-auto'>
           <GameGallery />
 
-          <div className='mt-16 text-3xl'>
+          <div className='mt-16 text-3xl font-bold'>
             <p><Link href={"/portfolio/page/1"} >▶︎ Other Works</Link></p>
             {/* <p><Link href={"/blog/page/1"} >▶︎ Blog</Link></p>
             <p><Link href={"/about"} >▶︎ About</Link></p>

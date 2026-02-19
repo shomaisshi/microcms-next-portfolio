@@ -11,7 +11,7 @@ export function MyGame({ title, imagelink, description, url }) {
                     height={300}
                     className='rounded-lg w-full'
                 />
-                <h3 className='mt-2 text-xl'>{title}</h3>
+                <h3 className='mt-2 text-xl font-bold'>{title}</h3>
                 <p className='mt-2 pb-4 text-base'>{description}</p>
                 <p className='mt-auto'><a href={url} target="_blank" rel="noopener noreferrer" className='bg-slate-300 rounded-sm p-2 text-base'>ブラウザで遊ぶ</a></p>
             </div>
@@ -24,8 +24,8 @@ export default function GameGallery() {
         <>
 
             <div className='w-[300px] mt-8'>
-                <h2 className='text-3xl'>Release games</h2>
-                <div className='mt-4'>
+                <h2 className='text-3xl font-bold'>リリースしたゲーム</h2>
+                <div className='mt-8'>
                     <Image
                         src="/images/MotionRec_keyart.png"
                         alt="プロフィール画像"
@@ -33,14 +33,14 @@ export default function GameGallery() {
                         height={300}
                         className='rounded-lg'
                     />
-                    <h3 className='mt-2 text-2xl'>MotionRec</h3>
+                    <h3 className='mt-2 text-2xl font-bold'>MotionRec</h3>
                     <p className='mt-2 text-base'>動きを記録し、再生して進む“レコードパズルアクション”</p>
                     <p className='mt-4'><a href="https://store.steampowered.com/app/2602230/MotionRec/" target="_blank" rel="noopener noreferrer" className='bg-slate-300 p-2 rounded-sm'>Steamページへ</a></p>
                 </div>
             </div>
 
-            <h2 className='text-3xl mt-16'>Tiny games</h2>
-            <div className='mt-4 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6'>
+            <h2 className='text-3xl mt-24 font-bold'>短編ゲーム</h2>
+            <div className='mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8'>
                 <MyGame
                     title="ビルの管理人"
                     imagelink="/images/bill_sokoban.png"

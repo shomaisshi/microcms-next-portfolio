@@ -37,7 +37,7 @@ export default function BlogPageId({ blog, totalCount, currentPage }) {
             <div className='p-2 md:p-8'>
 
                 <div className="md:flex flex-col md:w-[700px] m-auto gap-4">
-                    <h2 className='text-3xl'>ブログ記事一覧</h2>
+                    <h2 className='mt-8 text-3xl font-bold pl-4'>開発のきろく</h2>
                     <ul className="flex flex-col md:text-xl mt-4">
                         {blog.map((blog) => (
                             <li key={blog.id} className='list-none md:text-xl'>
@@ -45,7 +45,7 @@ export default function BlogPageId({ blog, totalCount, currentPage }) {
                                     <div className='flex hover:bg-slate-100 p-4 rounded-md'>
                                         <div className='w-72'>
                                             <div className="text-sm leading-4">{dayjs.utc(blog.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}</div>
-                                            <div className='text-base md:text-xl'>{blog.title}</div>
+                                            <div className='font-bold text-base md:text-xl'>{blog.title}</div>
                                         </div>
                                         <div className='ml-auto pl-2'>
                                             {blog.eyecatch ?
