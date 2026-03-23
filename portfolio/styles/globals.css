@@ -173,6 +173,15 @@ a {
   margin: auto;
 }
 
+.post blockquote {
+  border-left: 4px solid #ccc;
+  padding: 8px 16px;
+  margin: 16px 0;
+  color: #777;
+  background: #f9f9f9;
+  border-radius: 0 8px 8px 0;
+}
+
 @media screen and (min-width: 700px) {
   .post p {
     font-size: 1.2rem;

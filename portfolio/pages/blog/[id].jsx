@@ -19,10 +19,15 @@ dayjs.extend(timezone);
 export default function BlogId({ blog }) {
     return (
         <div>
-            <MyHead
+            {/* <MyHead
                 pageTitle={blog.title}
                 pageDescription={'shomaのブログです。'}
                 pageImg={'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
+            /> */}
+            <MyHead
+                pageTitle={blog.title}
+                pageDescription={'shomaのブログです。'}
+                pageImg={blog.eyecatch ? blog.eyecatch.url + '?fit=max&w=1200&fm=webp' : 'https://microcms-next-portfolio-ebon.vercel.app/OGP.png'}
             />
             <Header page={'blog'} />
             <main className="md:w-[700px] md:p-8 md:m-auto" >
