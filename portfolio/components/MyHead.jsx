@@ -10,7 +10,6 @@ const MyHead = ({
 }) => {
   const defaultTitle = 'shoma'
   const defaultDescription = 'shomaのポートフォリオサイトです。'
-
   const title = pageTitle ? `${pageTitle} | ${defaultTitle}` : defaultTitle
   const description = pageDescription ? pageDescription : defaultDescription
   const url = pagePath
@@ -32,6 +31,11 @@ const MyHead = ({
       <meta property="og:image" content={imgUrl} />
       <meta property="og:image:width" content={String(imgWidth)} />
       <meta property="og:image:height" content={String(imgHeight)} />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={imgUrl} />
     </Head>
   )
 }
