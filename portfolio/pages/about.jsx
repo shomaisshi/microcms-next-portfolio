@@ -50,26 +50,27 @@ export default function Home() {
                             触って楽しいものを作るのが好き。<br /><br />
                         </p>
 
-                        <p>→<a href='https://donutshunter.itch.io' target="_blank" rel="noreferrer" className='hover:underline'>Tiny games（itchへとびます）</a></p>
+                        {/* <p>→<a href='https://donutshunter.itch.io' target="_blank" rel="noreferrer" className='hover:underline'>Tiny games（itchへとびます）</a></p>
                         <p>→<Link href='blog/page/1' className='hover:underline'>Blog</Link></p>
-                        <p>→<Link href='portfolio/page/1' className='hover:underline'>Works</Link></p>
+                        <p>→<Link href='portfolio/page/1' className='hover:underline'>Works</Link></p> */}
 
 
-                        <div className="mt-16">
-                            {/* <div className='mt-4'>HANDSUM inc.</div>
-            <div>2020: 多摩美術大学統合デザイン学科卒業</div> */}
-                        </div>
                     </div>
 
                     <div className='mt-auto'>
-                        <h2 className='flex items-center gap-1'>
+                        <div>
+                            <div className='mt-4'>HANDSUM inc.</div>
+                            <div>2020年 多摩美術大学統合デザイン学科卒業</div>
+                        </div>
+
+                        <h2 className='mt-8 flex items-center gap-1'>
                             <FontAwesomeIcon icon={faAddressBook} className='h-[16px]' />
                             Contact
                         </h2>
                         <div>Mail: shoma.s.1219@gmail.com</div>
                         <div>
                             <div className='flex gap-3'>
-                                <a href="https://twitter.com/DonutsHunter" target="_blank" rel="noreferrer">X: @DonutsHunter</a>
+                                <a href="https://twitter.com/DonutsHunter" target="_blank" rel="noreferrer">X: shoma@DonutsHunter</a>
                                 {/* <a href="https://note.com/shoma_dev" target="_blank" rel="noreferrer">note</a> */}
                                 {/* <a href="https://donutshunter.itch.io" target="_blank" rel="noreferrer">itch.io</a> */}
                             </div>
