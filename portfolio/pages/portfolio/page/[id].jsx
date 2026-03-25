@@ -22,7 +22,7 @@ export default function PortfolioPageId({ portfolio, totalCount, currentPage }) 
                 {/* main */}
                 <div className='m-auto md:w-[700px] lg:w-[1000px] p-2 md:p-8'>
                     <div className='md:text-2xl font-bold'>works</div>
-                    <ul className='mt-4 grid md:grid-cols-2 lg:grid-cols-3  gap-8 md:text-xl'>
+                    <ul className='mt-4 grid md:grid-cols-2 lg:grid-cols-3  gap-8 md:gap-16 md:text-xl'>
                         {portfolio.map(item => (
                             <li key={item.id} className='w-[300px]'>
                                 <Link href={`/portfolio/${item.id}`} className='hover:underline'>

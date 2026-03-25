@@ -36,7 +36,8 @@ export default function Home() {
           <GameGallery />
 
           <div className='mt-16 text-3xl font-bold'>
-            <p><Link href={"/portfolio/page/1"} >▶︎ Other Works</Link></p>
+            <p><Link href={"/portfolio/page/1"} className='hover:underline'>▶︎ Other Works</Link></p>
+            <p><a href='https://donutshunter.itch.io' target="_blank" rel="noreferrer" className='hover:underline'>▶︎ itch.io</a></p>
             {/* <p><Link href={"/blog/page/1"} >▶︎ Blog</Link></p>
             <p><Link href={"/about"} >▶︎ About</Link></p>
             <p><a href="https://donutshunter.itch.io" target="_blank" rel="noreferrer">▶︎ Itch.io</a></p>
