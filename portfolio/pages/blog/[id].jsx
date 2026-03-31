@@ -39,6 +39,29 @@ export default function BlogId({ blog, blogList }) {
                     </div>
                 </div>
 
+                {/* プロフィールカード */}
+                <div className="p-6 flex justify-center">
+                    <a href="https://x.com/DonutsHunter"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex gap-4 items-center p-4 md:p-8 rounded-xl border border-slate-200 hover:bg-slate-50 transition-colors w-fit"
+                    >
+                        <img
+                            src="/shoma_icon.jpg"
+                            alt="shoma"
+                            className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover flex-shrink-0"
+                        />
+                        <div>
+                            <div className="font-bold text-xl">shoma@DonutsHunter</div>
+                            <div className="text-slate-500 text-sm md:text-base">Video Game Designer</div>
+                            <div className="text-slate-500 text-sm md:text-base">pico8を使ってゲームジャムに参加して小さなゲームを作ります。</div>
+                        </div>
+                        <svg className="w-6 h-6 text-slate-400 ml-1" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622z" />
+                        </svg>
+                    </a>
+                </div>
+
                 {/* ▼ 記事一覧 */}
                 <div className="px-6 pb-12">
                     <h2 className="text-2xl font-bold mb-4 border-t pt-8">開発のきろく（最新20件表示）</h2>
@@ -74,8 +97,8 @@ export default function BlogId({ blog, blogList }) {
 
                 {/* ▲ 記事一覧 */}
 
-            </main>
-        </div>
+            </main >
+        </div >
     );
 }
 
