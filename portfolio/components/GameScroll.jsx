@@ -102,8 +102,8 @@ export default function GameScroll() {
                 src={game.imagelink}
                 alt={game.title}
                 fill
+                sizes="176px"
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
-                unoptimized={game.imagelink.endsWith('.gif')}
               />
             </div>
             <p className="mt-2 text-base font-medium text-gray-800 leading-snug line-clamp-1">
