@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import GameScroll from '@/components/GameScroll'
-import ScrollRotateImage from '@/components/ScrollRotateImage'
+// import ScrollRotateImage from '@/components/ScrollRotateImage'
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -103,13 +103,7 @@ export default function BlogId({ blog, blogList }) {
                 {/* ▲ 記事一覧 */}
 
             </main >
-            <ScrollRotateImage src="/images/ninjinkun_rotate.png" />
-            {/* <ScrollRotateImage
-                src="/images/ninjinkun_rotate.png"
-                size={80}               // 画像サイズ（px）
-                scrollPerRotation={1000} // 小さいほど速く回転
-                offset={32}             // 右・下の余白（px）
-            /> */}
+            {/* <ScrollRotateImage src="/images/ninjinkun_rotate.png" /> */}
         </div >
     );
 }
