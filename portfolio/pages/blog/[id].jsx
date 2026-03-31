@@ -79,8 +79,27 @@ export default function BlogId({ blog, blogList }) {
     );
 }
 
+// export const getStaticPaths = async () => {
+//     const data = await client.get({ endpoint: "blog", queries: { offset: 0, limit: 20 } });
+//     const paths = data.contents.map((content) => `/blog/${content.id}`);
+//     return { paths, fallback: false };
+// };
 export const getStaticPaths = async () => {
-    const data = await client.get({ endpoint: "blog", queries: { offset: 0, limit: 20 } });
+    // まず総件数を取得
+    const countData = await client.get({
+        endpoint: "blog",
+        queries: { limit: 0 }
+    });
+
+    // 全件のIDを取得
+    const data = await client.get({
+        endpoint: "blog",
+        queries: {
+            limit: countData.totalCount,
+            fields: "id",
+        }
+    });
+
     const paths = data.contents.map((content) => `/blog/${content.id}`);
     return { paths, fallback: false };
 };
