@@ -10,6 +10,7 @@ import timezone from 'dayjs/plugin/timezone';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import GameScroll from '@/components/GameScroll'
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -61,6 +62,9 @@ export default function BlogId({ blog, blogList }) {
                         </svg>
                     </a>
                 </div>
+
+                {/* ゲーム一覧 */}
+                <GameScroll />
 
                 {/* ▼ 記事一覧 */}
                 <div className="px-6 pb-12">
