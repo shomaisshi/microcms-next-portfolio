@@ -26,7 +26,7 @@ export default function ScrollRotateImage({
       setIsVisible(window.innerWidth >= mobileBreakpoint)
     }
 
-    handleResize() // 初期チェック
+    handleResize()
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener('resize', handleResize, { passive: true })
@@ -37,10 +37,15 @@ export default function ScrollRotateImage({
     }
   }, [scrollPerRotation, mobileBreakpoint])
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   if (!isVisible) return null
 
   return (
     <div
+      onClick={handleClick}
       style={{
         position: 'fixed',
         right: offset,
@@ -49,7 +54,7 @@ export default function ScrollRotateImage({
         height: size,
         transform: `rotate(${rotation}deg)`,
         zIndex: 50,
-        pointerEvents: 'none',
+        cursor: 'pointer',
       }}
     >
       <Image
