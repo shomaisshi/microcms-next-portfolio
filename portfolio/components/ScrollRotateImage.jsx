@@ -1,10 +1,9 @@
 // 'use client'
-
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 /**
- * @param {{ src: string, alt?: string, size?: number, scrollPerRotation?: number, offset?: number }} props
+ * @param {{ src: string, alt?: string, size?: number, scrollPerRotation?: number, offset?: number, mobileBreakpoint?: number }} props
  */
 export default function ScrollRotateImage({
   src,
@@ -12,8 +11,10 @@ export default function ScrollRotateImage({
   size = 80,
   scrollPerRotation = 1200,
   offset = 24,
+  mobileBreakpoint = 768,
 }) {
   const [rotation, setRotation] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,9 +22,22 @@ export default function ScrollRotateImage({
       setRotation(deg)
     }
 
+    const handleResize = () => {
+      setIsVisible(window.innerWidth >= mobileBreakpoint)
+    }
+
+    handleResize() // 初期チェック
+
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [scrollPerRotation])
+    window.addEventListener('resize', handleResize, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [scrollPerRotation, mobileBreakpoint])
+
+  if (!isVisible) return null
 
   return (
     <div
@@ -35,7 +49,7 @@ export default function ScrollRotateImage({
         height: size,
         transform: `rotate(${rotation}deg)`,
         zIndex: 50,
-        pointerEvents: 'none', // クリック等の邪魔をしない
+        pointerEvents: 'none',
       }}
     >
       <Image
