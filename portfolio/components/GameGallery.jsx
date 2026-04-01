@@ -40,7 +40,7 @@ export default function GameGallery() {
             </div>
 
             <h2 className='text-3xl mt-24 mb-4 font-bold'>短編ゲーム</h2>
-            <p><a href="https://www.lexaloffle.com/pico-8.php" target="_blank" className='underline'>PICO-8</a>という架空のゲーム機を使ってゲームジャムに参加しています。</p>
+            <p><a href="https://www.lexaloffle.com/pico-8.php" target="_blank" className='underline' rel="noopener noreferrer">PICO-8</a>という架空のゲーム機を使ってゲームジャムに参加しています。</p>
             <p>制約：128×128ピクセル / 16色 / 1週間~1ヶ月</p>
             <div className='mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8'>
                 <MyGame
