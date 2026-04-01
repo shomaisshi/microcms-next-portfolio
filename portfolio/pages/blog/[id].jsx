@@ -54,8 +54,8 @@ export default function BlogId({ blog, blogList }) {
                             className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover flex-shrink-0"
                         />
                         <div>
-                            <div className="font-bold text-xl">shoma@DonutsHunter</div>
-                            <div className="text-slate-500 text-sm md:text-base">Video Game Designer</div>
+                            <div className="font-bold text-xl">shoma <span className="font-normal text-slate-500">@DonutsHunter</span></div>
+                            <div className="text-slate-500 text-sm md:text-base">Game Developer</div>
                             <div className="text-slate-500 text-sm md:text-base">pico8を使ってゲームジャムに参加して小さなゲームを作ります。</div>
                         </div>
                         <svg className="w-6 h-6 text-slate-400 ml-1" viewBox="0 0 24 24" fill="currentColor">

@@ -34,12 +34,14 @@ export default function GameGallery() {
                         className='rounded-lg'
                     />
                     <h3 className='mt-2 text-2xl font-bold'>MotionRec</h3>
-                    <p className='mt-2 text-base'>動きを記録し、再生して進む“レコードパズルアクション”</p>
+                    <p className='mt-2 text-base'>動きを記録し、再生して進むレコードパズルアクション</p>
                     <p className='mt-4'><a href="https://store.steampowered.com/app/2602230/MotionRec/" target="_blank" rel="noopener noreferrer" className='bg-slate-300 p-2 rounded-sm'>Steamページへ</a></p>
                 </div>
             </div>
 
-            <h2 className='text-3xl mt-24 font-bold'>短編ゲーム</h2>
+            <h2 className='text-3xl mt-24 mb-4 font-bold'>短編ゲーム</h2>
+            <p><a href="https://www.lexaloffle.com/pico-8.php" target="_blank" className='underline'>PICO-8</a>という架空のゲーム機を使ってゲームジャムに参加しています。</p>
+            <p>制約：128×128ピクセル / 16色 / 1週間~1ヶ月</p>
             <div className='mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8'>
                 <MyGame
                     title="ビルの管理人"

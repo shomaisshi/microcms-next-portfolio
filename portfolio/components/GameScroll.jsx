@@ -109,7 +109,7 @@ export default function GameScroll() {
             <p className="mt-2 text-base font-medium text-gray-800 leading-snug line-clamp-1">
               {game.title}
             </p>
-            <p className="mt-0.5 text-xs text-gray-500 leading-relaxed line-clamp-2">
+            <p className="mt-0.5 text-base text-gray-500 leading-relaxed line-clamp-2">
               {game.description}
             </p>
           </a>
