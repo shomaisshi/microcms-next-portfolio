@@ -44,46 +44,52 @@ export default function GameGallery() {
             <p>制約：128×128ピクセル / 16色 / 1週間~1ヶ月</p>
             <div className='mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8'>
                 <MyGame
+                    title="にんじんおうこく！"
+                    imagelink="/images/ninjin_oukoku.png"
+                    description="うさぎとにんじんのパズルプラットフォーマー！！"
+                    url="https://donutshunter.itch.io/hinjin-oukoku"
+                />
+                <MyGame
                     title="ビルの管理人"
                     imagelink="/images/bill_sokoban.png"
                     description="レトロなビルに清掃のお手伝いに行くことになりました。部屋を片付けよう。"
-                    url="https://shomaisshi.github.io/my_games/bill_sokoban/"
+                    url="https://donutshunter.itch.io/bill-sokoban"
                 />
                 <MyGame
                     title="MOTIONREC（PICO-8 ver）"
                     imagelink="/images/motionrec.gif"
                     description="「動きを記録して再生する」というコンセプトのアクションパズル​"
-                    url="https://www.lexaloffle.com/bbs/?pid=131910#p"
+                    url="https://donutshunter.itch.io/motionrec"
                 />
                 <MyGame
                     title="クラゲガイド"
                     imagelink="/images/firesidejam.png"
                     description="クラゲの群れを案内してゴールまで連れて行こう"
-                    url="https://shomaisshi.github.io/my_games/firesidejam/"
+                    url="https://donutshunter.itch.io/jellyfish-guide"
                 />
                 <MyGame
                     title="行列のできるクスリ屋"
                     imagelink="/images/clickerjam.gif"
                     description="勇者に薬草を売ってお金を稼ごう。魔物を育てて勇者の来店率UP"
-                    url="https://shomaisshi.github.io/my_games/clickerjam/"
+                    url="https://donutshunter.itch.io/drugstore-rush"
                 />
                 <MyGame
                     title="リリースノート"
                     imagelink="/images/brackeysjam.gif"
                     description="ブロック崩しをクリアするごとにアップデートが入り仕様が変わっていく"
-                    url="https://shomaisshi.github.io/my_games/brackeysjam/"
+                    url="https://donutshunter.itch.io/release-note-eternal"
                 />
                 <MyGame
                     title="Pick Up バレット"
                     imagelink="/images/juicejam_title.gif"
                     description="弾を拾いながら進むシューティングゲーム"
-                    url="https://shomaisshi.github.io/my_games/juicejam2/"
+                    url="https://donutshunter.itch.io/pick-up-bullet"
                 />
                 <MyGame
                     title="Re:ドリーム"
                     imagelink="/images/lsdjam.gif"
                     description="夢ではよく会う人がいてよくいく町がありよく死ぬ場所がある。そして朝起きる。"
-                    url="https://shomaisshi.github.io/my_games/lsdjam/"
+                    url="https://donutshunter.itch.io/re-dream"
                 />
             </div>
         </>

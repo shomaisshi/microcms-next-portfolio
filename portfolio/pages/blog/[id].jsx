@@ -42,7 +42,7 @@ export default function BlogId({ blog, blogList }) {
                 </div>
 
                 {/* プロフィールカード */}
-                <div className="p-6 flex justify-center">
+                {/* <div className="p-6 flex justify-center">
                     <a href="https://x.com/DonutsHunter"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -56,16 +56,13 @@ export default function BlogId({ blog, blogList }) {
                         <div>
                             <div className="font-bold text-xl">shoma <span className="font-normal text-slate-500">@DonutsHunter</span></div>
                             <div className="text-slate-500 text-sm md:text-base">Game Developer</div>
-                            <div className="text-slate-500 text-sm md:text-base">pico8を使ってゲームジャムに参加して小さなゲームを作ります。</div>
+                            <div className="text-slate-500 text-sm md:text-base">小さなゲームを作ります。pico8を使ってゲームジャムに参加するのが好きです。</div>
                         </div>
                         <svg className="w-6 h-6 text-slate-400 ml-1" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622z" />
                         </svg>
                     </a>
-                </div>
-
-                {/* ゲーム一覧 */}
-                <GameScroll />
+                </div> */}
 
                 {/* ▼ 記事一覧 */}
                 <div className="px-6 pb-12">
@@ -100,7 +97,8 @@ export default function BlogId({ blog, blogList }) {
                     </div>
                 </div>
 
-                {/* ▲ 記事一覧 */}
+                {/* ゲーム一覧 */}
+                {/* <GameScroll /> */}
 
             </main >
             {/* <ScrollRotateImage src="/images/ninjinkun_rotate.png" /> */}
