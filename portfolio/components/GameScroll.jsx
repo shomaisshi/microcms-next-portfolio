@@ -14,7 +14,7 @@ const GAMES = [
     title: 'にんじんおうこく！',
     imagelink: '/images/ninjin_oukoku.png',
     description: 'うさぎとにんじんのパズルプラットフォーマー！！',
-    url: 'https://donutshunter.itch.io/hinjin-oukoku',
+    url: 'https://donutshunter.itch.io/ninjin-oukoku',
   },
   {
     title: 'ビルの管理人',

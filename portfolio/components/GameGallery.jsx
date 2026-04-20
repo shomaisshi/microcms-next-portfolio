@@ -47,7 +47,7 @@ export default function GameGallery() {
                     title="にんじんおうこく！"
                     imagelink="/images/ninjin_oukoku.png"
                     description="うさぎとにんじんのパズルプラットフォーマー！！"
-                    url="https://donutshunter.itch.io/hinjin-oukoku"
+                    url="https://donutshunter.itch.io/ninjin-oukoku"
                 />
                 <MyGame
                     title="ビルの管理人"
